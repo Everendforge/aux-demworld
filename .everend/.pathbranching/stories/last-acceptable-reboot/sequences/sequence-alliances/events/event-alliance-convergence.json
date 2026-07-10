@@ -1,0 +1,32 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:alliances",
+  "event": {
+    "id": "event:alliance-convergence",
+    "name": "One Problem, Four Credentials",
+    "description": "Every route discovers the same inconvenient technical requirement.",
+    "type": "normal",
+    "text": {
+      "format": "plain",
+      "content": "Regardless of sponsor, the Continuity Engine requires four credentials from the genres it was built to reconcile. Tess boards Captain Sol Ledger's ship with a wizard syllabus, a creature labor agreement, and a municipal permit application."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "continuity-engine",
+      "captain-sol-ledger",
+      "stellar-plot-coupon",
+      "provisional-wand-license",
+      "mutual-aid-badge",
+      "emergency-cape-permit"
+    ],
+    "transitions": [
+      {
+        "id": "transition:convergence-to-orbit",
+        "from": "event:alliance-convergence",
+        "to": "event:orbital-coupon",
+        "label": "Begin the credential circuit"
+      }
+    ]
+  }
+}

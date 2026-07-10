@@ -1,0 +1,58 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:credentials",
+  "event": {
+    "id": "event:creature-arbitration",
+    "name": "The Bureaucratodon Grievance",
+    "description": "The traditional creature battle is replaced by binding arbitration.",
+    "type": "normal",
+    "branchRef": "branch:creature",
+    "text": {
+      "format": "plain",
+      "content": "A Bureaucratodon blocks the ranger office with six years of unpaid habitat receipts arranged across its armored back. Sprig-Nine translates the creature's roar as a demand for reimbursement plus dental."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "sprig-nine",
+      "bureaucratodon",
+      "collectible-wilds",
+      "mutual-aid-badge"
+    ],
+    "decisions": [
+      {
+        "id": "decision:resolve-grievance",
+        "name": "Resolve the labor dispute",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:full-settlement",
+            "name": "Approve the full settlement",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 3 },
+              { "type": "setVariable", "name": "solidarity", "value": 4 },
+              { "type": "unlockCanonEntry", "ref": "mutual-aid-badge" }
+            ]
+          },
+          {
+            "id": "outcome:mediation",
+            "name": "Negotiate phased reimbursement",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 3 },
+              { "type": "setVariable", "name": "solidarity", "value": 3 },
+              { "type": "unlockCanonEntry", "ref": "mutual-aid-badge" }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:wilds-to-cape",
+        "from": "event:creature-arbitration",
+        "to": "event:cape-permit-test",
+        "label": "Answer Cape City's emergency call"
+      }
+    ]
+  }
+}

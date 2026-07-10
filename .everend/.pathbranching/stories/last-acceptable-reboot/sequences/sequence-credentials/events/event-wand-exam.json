@@ -1,0 +1,68 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:credentials",
+  "event": {
+    "id": "event:wand-exam",
+    "name": "Applied Foreshadowing Final",
+    "description": "Professor Beige tests whether Tess can use power without mistaking it for authority.",
+    "type": "normal",
+    "branchRef": "branch:arcane",
+    "text": {
+      "format": "plain",
+      "content": "The exam offers four glowing answers: Courage, Cunning, Scholarship, and Merchandise. Tess notices a fifth answer hidden in the accessibility statement: None of the above may rule without consent."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "professor-beige",
+      "hexford-academy-annex",
+      "provisional-wand-license"
+    ],
+    "dialogues": [
+      {
+        "id": "dialogue:beige-exam",
+        "title": "The actual lesson",
+        "speakerRef": "professor-beige",
+        "text": {
+          "format": "plain",
+          "content": "Magic is the easy part. The difficult part is deciding who must live with it afterward."
+        },
+        "canonRefs": ["professor-beige"]
+      }
+    ],
+    "decisions": [
+      {
+        "id": "decision:exam-answer",
+        "name": "Answer the final question",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:fifth-answer",
+            "name": "Reject the premise",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 2 },
+              { "type": "unlockCanonEntry", "ref": "provisional-wand-license" }
+            ]
+          },
+          {
+            "id": "outcome:all-answers",
+            "name": "Circle every answer and annotate",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 2 },
+              { "type": "setVariable", "name": "compliance", "value": 3 },
+              { "type": "unlockCanonEntry", "ref": "provisional-wand-license" }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:academy-to-wilds",
+        "from": "event:wand-exam",
+        "to": "event:creature-arbitration",
+        "label": "Take the field practicum"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:ending-ordinary-lunch",
+    "name": "Secret Ending — Ordinary Lunch",
+    "description": "Tess uses the emergency exit and discovers a continuity without compulsory plot.",
+    "type": "final",
+    "branchRef": "branch:ending-lunch",
+    "text": {
+      "format": "plain",
+      "content": "Tess remembers the break-room instructions and opens an ordinary door beside the console. She, Nana Null, and whoever chooses to follow step into a quiet courtyard where lunch is not symbolic. Behind them, the great factions must solve the continuity together without assigning a chosen one."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "nana-null",
+      "office-prophecy-allocation",
+      "continuity-engine"
+    ]
+  }
+}

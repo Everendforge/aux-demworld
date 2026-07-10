@@ -1,0 +1,17 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequence": {
+    "id": "sequence:alliances",
+    "name": "Three Plans and One Transit Lounge",
+    "characterRef": "tess-quill",
+    "entryEventId": "event:ministry-briefing",
+    "eventIds": [
+      "event:ministry-briefing",
+      "event:freeplot-pitch",
+      "event:studio-lunch",
+      "event:alliance-convergence"
+    ],
+    "branchIds": ["branch:ministry", "branch:freeplot", "branch:studio"]
+  }
+}

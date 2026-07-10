@@ -1,0 +1,23 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequence": {
+    "id": "sequence:credentials",
+    "name": "The Four Genre Credentials",
+    "characterRef": "tess-quill",
+    "entryEventId": "event:orbital-coupon",
+    "eventIds": [
+      "event:orbital-coupon",
+      "event:wand-exam",
+      "event:creature-arbitration",
+      "event:cape-permit-test",
+      "event:credentials-assembled"
+    ],
+    "branchIds": [
+      "branch:stellar",
+      "branch:arcane",
+      "branch:creature",
+      "branch:cape"
+    ]
+  }
+}

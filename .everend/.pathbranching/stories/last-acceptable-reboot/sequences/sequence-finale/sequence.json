@@ -1,0 +1,29 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequence": {
+    "id": "sequence:finale",
+    "name": "The Last Acceptable Finale",
+    "characterRef": "tess-quill",
+    "entryEventId": "event:galleria-entry",
+    "eventIds": [
+      "event:galleria-entry",
+      "event:producer-monologue",
+      "event:continuity-console",
+      "event:ending-patched-canon",
+      "event:ending-stories-common",
+      "event:ending-prestige-reboot",
+      "event:ending-executive-promotion",
+      "event:ending-eternal-sequel",
+      "event:ending-ordinary-lunch"
+    ],
+    "branchIds": [
+      "branch:ending-patched",
+      "branch:ending-common",
+      "branch:ending-reboot",
+      "branch:ending-promotion",
+      "branch:ending-sequel",
+      "branch:ending-lunch"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:ending-prestige-reboot",
+    "name": "Ending — Prestige Reboot",
+    "description": "The world returns with excellent lighting and suspiciously selective memory.",
+    "type": "final",
+    "branchRef": "branch:ending-reboot",
+    "text": {
+      "format": "plain",
+      "content": "Tess authorizes one reboot under strict creative control. Meridian Junction returns in tasteful shadows; everyone is three years younger except Professor Beige, who has contractual immunity. The old timelines survive in an archive labeled REQUIRED READING."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "continuity-studios",
+      "executive-producer",
+      "reboot-cycle",
+      "professor-beige"
+    ]
+  }
+}

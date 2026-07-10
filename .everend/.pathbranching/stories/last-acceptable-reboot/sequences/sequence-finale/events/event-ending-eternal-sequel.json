@@ -1,0 +1,23 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:ending-eternal-sequel",
+    "name": "Ending — Eternal Sequel",
+    "description": "Nobody resolves the crisis, but everyone receives another season.",
+    "type": "final",
+    "branchRef": "branch:ending-sequel",
+    "text": {
+      "format": "plain",
+      "content": "Tess presses MORE NEXT SEASON. The Engine pauses at ninety-nine percent, the Producer schedules a larger finale, and Duchess Spoiler announces that the real villain has been watching from an even taller mall. TO BE CONTINUED becomes a physical object and blocks the exit."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "duchess-spoiler",
+      "executive-producer",
+      "finale-galleria",
+      "continuity-engine"
+    ]
+  }
+}

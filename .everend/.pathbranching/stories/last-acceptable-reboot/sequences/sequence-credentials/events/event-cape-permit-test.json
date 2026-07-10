@@ -1,0 +1,57 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:credentials",
+  "event": {
+    "id": "event:cape-permit-test",
+    "name": "The Unauthorized Skyline Beam",
+    "description": "Tess must solve a superhero crisis as a public-service problem.",
+    "type": "normal",
+    "branchRef": "branch:cape",
+    "text": {
+      "format": "plain",
+      "content": "A promotional villain activates a skyline beam without a permit. Paladin Patch evacuates the roof while Tess finds the cancellation clause hidden in the device's end-user agreement."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "paladin-patch",
+      "cape-city-permit-hall",
+      "emergency-cape-permit"
+    ],
+    "decisions": [
+      {
+        "id": "decision:stop-beam",
+        "name": "Stop the beam responsibly",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:civic-response",
+            "name": "Coordinate a public response",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 4 },
+              { "type": "setVariable", "name": "compliance", "value": 4 },
+              { "type": "unlockCanonEntry", "ref": "emergency-cape-permit" }
+            ]
+          },
+          {
+            "id": "outcome:dramatic-unplug",
+            "name": "Unplug it during the monologue",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 4 },
+              { "type": "setVariable", "name": "spectacle", "value": 4 },
+              { "type": "unlockCanonEntry", "ref": "emergency-cape-permit" }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:cape-to-assembly",
+        "from": "event:cape-permit-test",
+        "to": "event:credentials-assembled",
+        "label": "Assemble the four credentials"
+      }
+    ]
+  }
+}

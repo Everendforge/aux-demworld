@@ -1,0 +1,71 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:orientation",
+  "event": {
+    "id": "event:prophecy-overflow",
+    "name": "Prophecy Printer Overflow",
+    "description": "Every destiny printer assigns Tess the same temporary heroic role.",
+    "type": "normal",
+    "text": {
+      "format": "plain",
+      "content": "At 09:03, the first prophecy printer coughs out Tess Quill's employee number. At 09:04, every printer in the Office joins it. By 09:05, a ceremonial sword has arrived through internal mail with insufficient postage."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "office-prophecy-allocation",
+      "present-convergence"
+    ],
+    "dialogues": [
+      {
+        "id": "dialogue:tess-opening",
+        "title": "An administrative response",
+        "speakerRef": "tess-quill",
+        "text": {
+          "format": "plain",
+          "content": "I would like to appeal this destiny on the grounds that I have a meeting at ten."
+        },
+        "canonRefs": ["tess-quill"]
+      }
+    ],
+    "decisions": [
+      {
+        "id": "decision:answer-prophecy",
+        "name": "Answer the prophecy",
+        "description": "Choose Tess's initial attitude toward being assigned a destiny.",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:open-audit",
+            "name": "Open an official audit",
+            "consequences": [
+              { "type": "setVariable", "name": "compliance", "value": 1 }
+            ]
+          },
+          {
+            "id": "outcome:ask-who-benefits",
+            "name": "Ask who benefits",
+            "consequences": [
+              { "type": "setVariable", "name": "solidarity", "value": 1 }
+            ]
+          },
+          {
+            "id": "outcome:request-trailer",
+            "name": "Request a trailer first",
+            "consequences": [
+              { "type": "setVariable", "name": "spectacle", "value": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:prophecy-to-corridor",
+        "from": "event:prophecy-overflow",
+        "to": "event:not-secret-corridor",
+        "label": "Follow the emergency procedure"
+      }
+    ]
+  }
+}

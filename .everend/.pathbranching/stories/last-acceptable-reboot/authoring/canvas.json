@@ -1,0 +1,23 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "canvas": {
+    "activeSequenceId": "sequence:orientation",
+    "activeScope": { "kind": "sequence", "id": "sequence:orientation" },
+    "viewport": { "x": 40, "y": 80, "zoom": 0.82 },
+    "scopes": {
+      "sequence:orientation": {
+        "viewport": { "x": 80, "y": 120, "zoom": 0.9 }
+      },
+      "sequence:alliances": { "viewport": { "x": 60, "y": 100, "zoom": 0.8 } },
+      "sequence:credentials": {
+        "viewport": { "x": 50, "y": 90, "zoom": 0.78 }
+      },
+      "sequence:finale": { "viewport": { "x": 20, "y": 70, "zoom": 0.68 } }
+    }
+  },
+  "panels": {
+    "canonOpen": true,
+    "filesOpen": true
+  }
+}

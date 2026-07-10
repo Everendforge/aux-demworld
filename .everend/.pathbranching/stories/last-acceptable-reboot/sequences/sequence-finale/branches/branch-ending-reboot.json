@@ -1,0 +1,11 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "branch": {
+    "id": "branch:ending-reboot",
+    "title": "Ending: Prestige Reboot",
+    "color": "#E45756",
+    "eventIds": ["event:ending-prestige-reboot"]
+  }
+}

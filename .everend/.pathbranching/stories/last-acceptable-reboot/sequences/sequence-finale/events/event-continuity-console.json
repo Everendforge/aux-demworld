@@ -1,0 +1,190 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:continuity-console",
+    "name": "Choose the Continuity",
+    "description": "Tess decides what kind of ending the Grand Continuity can live with.",
+    "type": "normal",
+    "text": {
+      "format": "plain",
+      "content": "The four credentials unlock the console. Six options appear, each pretending to be the only responsible conclusion. A seventh button simply says MORE NEXT SEASON."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "continuity-engine",
+      "red-stamp-canon",
+      "ministry-narrative-compliance",
+      "freeplot-cooperative",
+      "continuity-studios",
+      "nana-null"
+    ],
+    "decisions": [
+      {
+        "id": "decision:select-ending",
+        "name": "Write the ending",
+        "description": "Route history unlocks specialized endings; the sequel is always available.",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:ending-patched",
+            "name": "Patch the shared canon",
+            "conditions": {
+              "all": [
+                {
+                  "type": "variable",
+                  "name": "keyCount",
+                  "operator": ">=",
+                  "value": 4
+                },
+                {
+                  "type": "variable",
+                  "name": "compliance",
+                  "operator": ">=",
+                  "value": 2
+                }
+              ]
+            },
+            "consequences": [
+              { "type": "setVariable", "name": "ending", "value": "patched" }
+            ]
+          },
+          {
+            "id": "outcome:ending-common",
+            "name": "Release the stories into common stewardship",
+            "conditions": {
+              "type": "variable",
+              "name": "solidarity",
+              "operator": ">=",
+              "value": 2
+            },
+            "consequences": [
+              { "type": "setVariable", "name": "ending", "value": "common" }
+            ]
+          },
+          {
+            "id": "outcome:ending-reboot",
+            "name": "Authorize a prestige reboot",
+            "conditions": {
+              "type": "variable",
+              "name": "spectacle",
+              "operator": ">=",
+              "value": 2
+            },
+            "consequences": [
+              { "type": "setVariable", "name": "ending", "value": "reboot" }
+            ]
+          },
+          {
+            "id": "outcome:ending-promotion",
+            "name": "Accept the executive promotion",
+            "conditions": {
+              "type": "variable",
+              "name": "ambition",
+              "operator": "==",
+              "value": true
+            },
+            "consequences": [
+              { "type": "setVariable", "name": "ending", "value": "promotion" }
+            ]
+          },
+          {
+            "id": "outcome:ending-sequel",
+            "name": "Delay the answer until the sequel",
+            "consequences": [
+              { "type": "setVariable", "name": "ending", "value": "sequel" }
+            ]
+          },
+          {
+            "id": "outcome:ending-lunch",
+            "name": "Use the ordinary emergency exit",
+            "conditions": {
+              "type": "variable",
+              "name": "noticedBreakRoom",
+              "operator": "==",
+              "value": true
+            },
+            "consequences": [
+              { "type": "setVariable", "name": "ending", "value": "lunch" }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:console-to-patched",
+        "from": "event:continuity-console",
+        "to": "event:ending-patched-canon",
+        "label": "Patched Canon",
+        "conditions": {
+          "type": "variable",
+          "name": "ending",
+          "operator": "==",
+          "value": "patched"
+        }
+      },
+      {
+        "id": "transition:console-to-common",
+        "from": "event:continuity-console",
+        "to": "event:ending-stories-common",
+        "label": "Stories in Common",
+        "conditions": {
+          "type": "variable",
+          "name": "ending",
+          "operator": "==",
+          "value": "common"
+        }
+      },
+      {
+        "id": "transition:console-to-reboot",
+        "from": "event:continuity-console",
+        "to": "event:ending-prestige-reboot",
+        "label": "Prestige Reboot",
+        "conditions": {
+          "type": "variable",
+          "name": "ending",
+          "operator": "==",
+          "value": "reboot"
+        }
+      },
+      {
+        "id": "transition:console-to-promotion",
+        "from": "event:continuity-console",
+        "to": "event:ending-executive-promotion",
+        "label": "Executive Promotion",
+        "conditions": {
+          "type": "variable",
+          "name": "ending",
+          "operator": "==",
+          "value": "promotion"
+        }
+      },
+      {
+        "id": "transition:console-to-sequel",
+        "from": "event:continuity-console",
+        "to": "event:ending-eternal-sequel",
+        "label": "Eternal Sequel",
+        "conditions": {
+          "type": "variable",
+          "name": "ending",
+          "operator": "==",
+          "value": "sequel"
+        }
+      },
+      {
+        "id": "transition:console-to-lunch",
+        "from": "event:continuity-console",
+        "to": "event:ending-ordinary-lunch",
+        "label": "Ordinary Lunch",
+        "conditions": {
+          "type": "variable",
+          "name": "ending",
+          "operator": "==",
+          "value": "lunch"
+        }
+      }
+    ]
+  }
+}

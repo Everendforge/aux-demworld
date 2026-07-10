@@ -1,0 +1,66 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:orientation",
+  "event": {
+    "id": "event:audit-chamber",
+    "name": "Nana Null's Impossible Audit",
+    "description": "Nana explains what the Continuity Engine was actually built to do.",
+    "type": "normal",
+    "text": {
+      "format": "plain",
+      "content": "Nana Null has spread seven contradictory histories across the audit table. Each is stamped OFFICIAL. She explains that the Engine once negotiated among versions, until the Ministry demanded certainty and the Studio discovered reboots were billable."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "nana-null",
+      "continuity-engine",
+      "red-stamp-canon",
+      "reboot-cycle",
+      "canon-debt"
+    ],
+    "dialogues": [
+      {
+        "id": "dialogue:null-engine",
+        "title": "The original purpose",
+        "speakerRef": "nana-null",
+        "text": {
+          "format": "plain",
+          "content": "A healthy continuity is a conversation, dear. A dead one is a filing cabinet with excellent branding."
+        },
+        "canonRefs": ["nana-null", "continuity-engine"]
+      }
+    ],
+    "decisions": [
+      {
+        "id": "decision:take-stamp",
+        "name": "Accept the Red Stamp",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:carry-stamp",
+            "name": "Carry it as a tool, not a crown",
+            "consequences": [
+              { "type": "unlockCanonEntry", "ref": "red-stamp-canon" }
+            ]
+          },
+          {
+            "id": "outcome:leave-stamp",
+            "name": "Leave it on the table",
+            "consequences": [
+              { "type": "setVariable", "name": "solidarity", "value": 1 }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:audit-to-alliance",
+        "from": "event:audit-chamber",
+        "to": "event:choose-alliance",
+        "label": "Hear the competing plans"
+      }
+    ]
+  }
+}

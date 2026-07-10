@@ -1,0 +1,17 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequence": {
+    "id": "sequence:orientation",
+    "name": "Mandatory Chosen-One Orientation",
+    "characterRef": "tess-quill",
+    "entryEventId": "event:prophecy-overflow",
+    "eventIds": [
+      "event:prophecy-overflow",
+      "event:not-secret-corridor",
+      "event:audit-chamber",
+      "event:choose-alliance"
+    ],
+    "branchIds": []
+  }
+}

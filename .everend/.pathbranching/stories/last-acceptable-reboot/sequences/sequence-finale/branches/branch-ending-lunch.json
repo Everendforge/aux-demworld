@@ -1,0 +1,11 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "branch": {
+    "id": "branch:ending-lunch",
+    "title": "Secret Ending: Ordinary Lunch",
+    "color": "#FFBE7D",
+    "eventIds": ["event:ending-ordinary-lunch"]
+  }
+}

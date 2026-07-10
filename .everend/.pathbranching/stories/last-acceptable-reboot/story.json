@@ -1,0 +1,265 @@
+{
+  "storageVersion": "0.2",
+  "specVersion": "0.1",
+  "projectId": "pathbranching:last-acceptable-reboot",
+  "storyId": "last-acceptable-reboot",
+  "universeRootPath": ".",
+  "name": "The Last Acceptable Reboot",
+  "sourceVault": {
+    "kind": "worldnotion",
+    "relativePath": "."
+  },
+  "entrySequenceId": "sequence:orientation",
+  "eventCategories": [
+    { "id": "normal", "label": "Event" },
+    { "id": "final", "label": "Ending", "terminal": true }
+  ],
+  "canonRefs": [
+    {
+      "id": "tess-quill",
+      "kind": "character",
+      "label": "Tess Quill",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Tess-Quill.md"
+    },
+    {
+      "id": "captain-sol-ledger",
+      "kind": "character",
+      "label": "Captain Sol Ledger",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Captain-Sol-Ledger.md"
+    },
+    {
+      "id": "professor-beige",
+      "kind": "character",
+      "label": "Professor Beige",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Professor-Beige.md"
+    },
+    {
+      "id": "paladin-patch",
+      "kind": "character",
+      "label": "Paladin Patch",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Paladin-Patch.md"
+    },
+    {
+      "id": "sprig-nine",
+      "kind": "character",
+      "label": "Sprig-Nine",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Sprig-Nine.md"
+    },
+    {
+      "id": "duchess-spoiler",
+      "kind": "character",
+      "label": "Duchess Spoiler",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Duchess-Spoiler.md"
+    },
+    {
+      "id": "executive-producer",
+      "kind": "character",
+      "label": "The Executive Producer",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/The-Executive-Producer.md"
+    },
+    {
+      "id": "nana-null",
+      "kind": "character",
+      "label": "Nana Null",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters/Nana-Null.md"
+    },
+    {
+      "id": "meridian-junction",
+      "kind": "location",
+      "label": "Meridian Junction",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Meridian-Junction.md"
+    },
+    {
+      "id": "office-prophecy-allocation",
+      "kind": "location",
+      "label": "Office of Prophecy Allocation",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Office-of-Prophecy-Allocation.md"
+    },
+    {
+      "id": "orbital-cantina-nine",
+      "kind": "location",
+      "label": "Orbital Cantina Nine",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Orbital-Cantina-Nine.md"
+    },
+    {
+      "id": "hexford-academy-annex",
+      "kind": "location",
+      "label": "Hexford Academy Annex",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Hexford-Academy-Annex.md"
+    },
+    {
+      "id": "collectible-wilds",
+      "kind": "location",
+      "label": "Collectible Wilds",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Collectible-Wilds.md"
+    },
+    {
+      "id": "cape-city-permit-hall",
+      "kind": "location",
+      "label": "Cape City Permit Hall",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Cape-City-Permit-Hall.md"
+    },
+    {
+      "id": "finale-galleria",
+      "kind": "location",
+      "label": "Finale Galleria",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Finale-Galleria.md"
+    },
+    {
+      "id": "ministry-narrative-compliance",
+      "kind": "organization",
+      "label": "Ministry of Narrative Compliance",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Ministry-of-Narrative-Compliance.md"
+    },
+    {
+      "id": "freeplot-cooperative",
+      "kind": "organization",
+      "label": "Freeplot Cooperative",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Freeplot-Cooperative.md"
+    },
+    {
+      "id": "continuity-studios",
+      "kind": "organization",
+      "label": "Continuity Studios",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Continuity-Studios.md"
+    },
+    {
+      "id": "continuity-engine",
+      "kind": "item",
+      "label": "Continuity Engine",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Continuity-Engine.md"
+    },
+    {
+      "id": "stellar-plot-coupon",
+      "kind": "item",
+      "label": "Stellar Plot Coupon",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Stellar-Plot-Coupon.md"
+    },
+    {
+      "id": "provisional-wand-license",
+      "kind": "item",
+      "label": "Provisional Wand License",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Provisional-Wand-License.md"
+    },
+    {
+      "id": "mutual-aid-badge",
+      "kind": "item",
+      "label": "Mutual Aid Badge",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Mutual-Aid-Badge.md"
+    },
+    {
+      "id": "emergency-cape-permit",
+      "kind": "item",
+      "label": "Emergency Cape Permit",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Emergency-Cape-Permit.md"
+    },
+    {
+      "id": "red-stamp-canon",
+      "kind": "item",
+      "label": "Red Stamp of Canon",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Red-Stamp-of-Canon.md"
+    },
+    {
+      "id": "bureaucratodon",
+      "kind": "creature",
+      "label": "Bureaucratodon",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Creatures/Bureaucratodon.md"
+    },
+    {
+      "id": "reboot-cycle",
+      "kind": "concept",
+      "label": "Reboot Cycle",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Reboot-Cycle.md"
+    },
+    {
+      "id": "canon-debt",
+      "kind": "concept",
+      "label": "Canon Debt",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Canon-Debt.md"
+    },
+    {
+      "id": "present-convergence",
+      "kind": "event",
+      "label": "The Present Convergence",
+      "status": "canon",
+      "source": "worldnotion",
+      "canonSourcePath": "Events/Present-Convergence.md"
+    }
+  ],
+  "variables": {
+    "route": "unassigned",
+    "keyCount": 0,
+    "noticedBreakRoom": false,
+    "compliance": 0,
+    "solidarity": 0,
+    "spectacle": 0,
+    "ambition": false,
+    "ending": "unselected"
+  },
+  "engineTargets": {
+    "generic-json": {
+      "adapter": "generic-json",
+      "minimumAdapterVersion": "0.1.0"
+    }
+  },
+  "sequenceIds": [
+    "sequence:orientation",
+    "sequence:alliances",
+    "sequence:credentials",
+    "sequence:finale"
+  ]
+}

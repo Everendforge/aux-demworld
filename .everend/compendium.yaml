@@ -1,0 +1,26 @@
+specVersion: "0.1"
+site:
+  title: The Grand Continuity Compendium
+  description: A synthetic parody universe where incompatible genres share one overworked continuity.
+  locale: en
+theme:
+  preset: midnight
+  accentColor: "#E6A93D"
+navigation:
+  typeOrder:
+    [
+      universe,
+      character,
+      creature,
+      location,
+      organization,
+      item,
+      concept,
+      event,
+      story,
+      scene,
+    ]
+publication:
+  statuses: [canon, proposal]
+narrative:
+  mode: scenes-and-relations

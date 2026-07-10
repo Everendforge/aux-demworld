@@ -1,0 +1,24 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:ending-patched-canon",
+    "name": "Ending — Patched Canon",
+    "description": "Tess restores a shared canon that preserves contradictions as recognized memories.",
+    "type": "final",
+    "branchRef": "branch:ending-patched",
+    "text": {
+      "format": "plain",
+      "content": "Tess stamps one sentence: NO TRUE HISTORY MAY ERASE THE PEOPLE WHO REMEMBER ANOTHER. The Engine rebuilds a common timeline with visible seams, public change logs, and an appeals process that finally serves number four."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "continuity-engine",
+      "red-stamp-canon",
+      "ministry-narrative-compliance",
+      "canon-debt"
+    ],
+    "unlocks": [{ "type": "unlockCanonEntry", "ref": "canon-debt" }]
+  }
+}

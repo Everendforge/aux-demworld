@@ -1,0 +1,95 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:orientation",
+  "event": {
+    "id": "event:choose-alliance",
+    "name": "Choose a Continuity Sponsor",
+    "description": "Three factions offer mutually exclusive support packages.",
+    "type": "normal",
+    "text": {
+      "format": "plain",
+      "content": "In Meridian Junction's least private transit lounge, the Ministry offers authority, Freeplot offers allies, and Continuity Studios offers lunch plus a suspicious amount of production value."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "meridian-junction",
+      "ministry-narrative-compliance",
+      "freeplot-cooperative",
+      "continuity-studios"
+    ],
+    "decisions": [
+      {
+        "id": "decision:select-alliance",
+        "name": "Select an approach",
+        "description": "The routes reconverge after changing Tess's leverage and final options.",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:route-ministry",
+            "name": "Restore the official canon",
+            "consequences": [
+              { "type": "setVariable", "name": "route", "value": "ministry" },
+              { "type": "setVariable", "name": "compliance", "value": 2 }
+            ]
+          },
+          {
+            "id": "outcome:route-freeplot",
+            "name": "Open the stories",
+            "consequences": [
+              { "type": "setVariable", "name": "route", "value": "freeplot" },
+              { "type": "setVariable", "name": "solidarity", "value": 2 }
+            ]
+          },
+          {
+            "id": "outcome:route-studio",
+            "name": "Make the reboot spectacular",
+            "consequences": [
+              { "type": "setVariable", "name": "route", "value": "studio" },
+              { "type": "setVariable", "name": "spectacle", "value": 2 },
+              { "type": "setVariable", "name": "ambition", "value": true }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:alliance-to-ministry",
+        "from": "event:choose-alliance",
+        "to": "event:ministry-briefing",
+        "label": "Ministry route",
+        "conditions": {
+          "type": "variable",
+          "name": "route",
+          "operator": "==",
+          "value": "ministry"
+        }
+      },
+      {
+        "id": "transition:alliance-to-freeplot",
+        "from": "event:choose-alliance",
+        "to": "event:freeplot-pitch",
+        "label": "Freeplot route",
+        "conditions": {
+          "type": "variable",
+          "name": "route",
+          "operator": "==",
+          "value": "freeplot"
+        }
+      },
+      {
+        "id": "transition:alliance-to-studio",
+        "from": "event:choose-alliance",
+        "to": "event:studio-lunch",
+        "label": "Studio route",
+        "conditions": {
+          "type": "variable",
+          "name": "route",
+          "operator": "==",
+          "value": "studio"
+        }
+      }
+    ]
+  }
+}

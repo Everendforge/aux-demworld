@@ -1,0 +1,56 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:credentials",
+  "event": {
+    "id": "event:orbital-coupon",
+    "name": "The Invoice Runner Heist",
+    "description": "Tess and Sol recover a coupon for one impossible maneuver.",
+    "type": "exploration",
+    "branchRef": "branch:stellar",
+    "text": {
+      "format": "plain",
+      "content": "At Orbital Cantina Nine, Sol's heist begins with forged catering invoices and ends when Tess asks the manager why a sacred plot device is stored beside expired loyalty cards."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "captain-sol-ledger",
+      "orbital-cantina-nine",
+      "stellar-plot-coupon"
+    ],
+    "decisions": [
+      {
+        "id": "decision:coupon-method",
+        "name": "Acquire the coupon",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:coupon-invoice",
+            "name": "Approve a compensating invoice",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 1 },
+              { "type": "unlockCanonEntry", "ref": "stellar-plot-coupon" }
+            ]
+          },
+          {
+            "id": "outcome:coupon-stunt",
+            "name": "Perform the impossible maneuver first",
+            "consequences": [
+              { "type": "setVariable", "name": "keyCount", "value": 1 },
+              { "type": "setVariable", "name": "spectacle", "value": 4 },
+              { "type": "unlockCanonEntry", "ref": "stellar-plot-coupon" }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:orbit-to-academy",
+        "from": "event:orbital-coupon",
+        "to": "event:wand-exam",
+        "label": "Plot a course for Hexford"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:ending-executive-promotion",
+    "name": "Ending — Executive Promotion",
+    "description": "Tess joins the Studio and discovers the villain chair has lumbar support.",
+    "type": "final",
+    "branchRef": "branch:ending-promotion",
+    "text": {
+      "format": "plain",
+      "content": "Vice President Quill signs the reboot and moves into an office overlooking every possible skyline beam. She preserves her friends, improves creature residuals, and tells herself she can reform the Studio from within. The final shot reveals the contract still has no final page."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "executive-producer",
+      "continuity-studios",
+      "duchess-spoiler"
+    ]
+  }
+}

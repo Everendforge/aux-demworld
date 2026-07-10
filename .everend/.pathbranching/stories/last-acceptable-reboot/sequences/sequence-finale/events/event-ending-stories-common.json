@@ -1,0 +1,23 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:ending-stories-common",
+    "name": "Ending — Stories in Common",
+    "description": "The Engine becomes a federation of community-maintained continuities.",
+    "type": "final",
+    "branchRef": "branch:ending-common",
+    "text": {
+      "format": "plain",
+      "content": "Tess opens the Engine's maintenance protocol. Communities inherit their branches and agree on a small common canon: everyone existed, everyone mattered, and no one may trademark friendship. The first governance meeting lasts nine hours and is considered a triumph."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "freeplot-cooperative",
+      "continuity-engine",
+      "sprig-nine",
+      "nana-null"
+    ]
+  }
+}

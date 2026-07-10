@@ -1,0 +1,65 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:producer-monologue",
+    "name": "The Executive Notes",
+    "description": "The Producer explains why every complicated world deserves simplification.",
+    "type": "normal",
+    "text": {
+      "format": "plain",
+      "content": "The Executive Producer descends on a platform labeled PRACTICAL EFFECT. They promise clearer lore, younger heroes, shorter names, and a universe anyone can understand without reading a wiki maintained by volunteers."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "executive-producer",
+      "continuity-studios",
+      "reboot-cycle",
+      "canon-debt"
+    ],
+    "dialogues": [
+      {
+        "id": "dialogue:producer-offer",
+        "title": "Vice President of Destiny",
+        "speakerRef": "executive-producer",
+        "text": {
+          "format": "plain",
+          "content": "You can save every part of the world that tests well. I can even put your name above the title."
+        },
+        "canonRefs": ["executive-producer", "tess-quill"]
+      }
+    ],
+    "decisions": [
+      {
+        "id": "decision:answer-producer",
+        "name": "Answer the offer",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:reject-producer",
+            "name": "Reject ownership of destiny",
+            "consequences": [
+              { "type": "setVariable", "name": "ambition", "value": false }
+            ]
+          },
+          {
+            "id": "outcome:consider-promotion",
+            "name": "Ask about the dental plan",
+            "consequences": [
+              { "type": "setVariable", "name": "ambition", "value": true }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:producer-to-console",
+        "from": "event:producer-monologue",
+        "to": "event:continuity-console",
+        "label": "Take control of the Engine"
+      }
+    ]
+  }
+}

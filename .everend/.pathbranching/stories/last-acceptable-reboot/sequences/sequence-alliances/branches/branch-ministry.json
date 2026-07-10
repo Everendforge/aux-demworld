@@ -1,0 +1,12 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:alliances",
+  "branch": {
+    "id": "branch:ministry",
+    "title": "Restore the Official Canon",
+    "description": "Work within the Ministry and repair the existing continuity.",
+    "color": "#4C78A8",
+    "eventIds": ["event:ministry-briefing"]
+  }
+}

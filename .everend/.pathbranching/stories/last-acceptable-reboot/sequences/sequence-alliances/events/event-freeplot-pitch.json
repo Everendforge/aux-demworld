@@ -1,0 +1,54 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:alliances",
+  "event": {
+    "id": "event:freeplot-pitch",
+    "name": "The Cooperative Fork",
+    "description": "Freeplot proposes shared stewardship with all the risks of genuine freedom.",
+    "type": "normal",
+    "branchRef": "branch:freeplot",
+    "text": {
+      "format": "plain",
+      "content": "Freeplot unfolds a map drawn by hundreds of hands. Every community keeps its own branch, but common facts are maintained through negotiation, mutual aid, and extremely long meetings with snacks."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "freeplot-cooperative",
+      "captain-sol-ledger",
+      "nana-null",
+      "sprig-nine"
+    ],
+    "decisions": [
+      {
+        "id": "decision:freeplot-terms",
+        "name": "Define the commons",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:shared-maintenance",
+            "name": "Commit to shared maintenance",
+            "consequences": [
+              { "type": "setVariable", "name": "solidarity", "value": 4 }
+            ]
+          },
+          {
+            "id": "outcome:local-forks",
+            "name": "Let every community fork freely",
+            "consequences": [
+              { "type": "setVariable", "name": "solidarity", "value": 3 }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:freeplot-to-convergence",
+        "from": "event:freeplot-pitch",
+        "to": "event:alliance-convergence",
+        "label": "Receive community support"
+      }
+    ]
+  }
+}

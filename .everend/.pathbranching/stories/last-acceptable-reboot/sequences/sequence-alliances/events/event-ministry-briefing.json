@@ -1,0 +1,54 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:alliances",
+  "event": {
+    "id": "event:ministry-briefing",
+    "name": "The Official Restoration Plan",
+    "description": "Tess receives authority, forms, and a dangerously simple answer.",
+    "type": "normal",
+    "branchRef": "branch:ministry",
+    "text": {
+      "format": "plain",
+      "content": "The Ministry proposes repairing one timeline and archiving the rest. Nobody uses the word erase, although it appears in the footer fourteen times."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "ministry-narrative-compliance",
+      "red-stamp-canon",
+      "canon-debt"
+    ],
+    "decisions": [
+      {
+        "id": "decision:ministry-terms",
+        "name": "Set terms for restoration",
+        "type": "dialogue",
+        "outcomes": [
+          {
+            "id": "outcome:protect-memories",
+            "name": "Preserve contradictory memories",
+            "consequences": [
+              { "type": "setVariable", "name": "compliance", "value": 3 },
+              { "type": "setVariable", "name": "solidarity", "value": 1 }
+            ]
+          },
+          {
+            "id": "outcome:accept-clean-canon",
+            "name": "Prioritize a clean canon",
+            "consequences": [
+              { "type": "setVariable", "name": "compliance", "value": 4 }
+            ]
+          }
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:ministry-to-convergence",
+        "from": "event:ministry-briefing",
+        "to": "event:alliance-convergence",
+        "label": "Receive Ministry access"
+      }
+    ]
+  }
+}

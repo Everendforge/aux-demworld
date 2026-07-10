@@ -1,0 +1,13 @@
+{
+  "version": "0.2",
+  "activeStoryId": "last-acceptable-reboot",
+  "stories": [
+    {
+      "id": "last-acceptable-reboot",
+      "name": "The Last Acceptable Reboot",
+      "path": ".everend/.pathbranching/stories/last-acceptable-reboot/story.json",
+      "createdAt": "2026-07-10T00:00:00.000Z",
+      "updatedAt": "2026-07-10T00:00:00.000Z"
+    }
+  ]
+}

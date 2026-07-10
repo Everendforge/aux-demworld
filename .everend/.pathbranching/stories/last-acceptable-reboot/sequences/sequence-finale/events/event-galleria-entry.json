@@ -1,0 +1,42 @@
+{
+  "storageVersion": "0.2",
+  "storyId": "last-acceptable-reboot",
+  "sequenceId": "sequence:finale",
+  "event": {
+    "id": "event:galleria-entry",
+    "name": "Infiltrate Finale Galleria",
+    "description": "Narrative gravity pulls every ally, rival, credential, and unpaid invoice into one mall.",
+    "type": "exploration",
+    "text": {
+      "format": "plain",
+      "content": "Finale Galleria has closed for the apocalypse but the food court remains open. Tess enters beneath a skyline beam while abandoned versions of familiar heroes watch from darkened storefronts."
+    },
+    "canonRefs": [
+      "tess-quill",
+      "finale-galleria",
+      "duchess-spoiler",
+      "continuity-engine",
+      "present-convergence"
+    ],
+    "dialogues": [
+      {
+        "id": "dialogue:duchess-improvise",
+        "title": "A spoiler's invitation",
+        "speakerRef": "duchess-spoiler",
+        "text": {
+          "format": "plain",
+          "content": "They filmed six endings. Let us make the seventh thing they fear: an unscheduled decision."
+        },
+        "canonRefs": ["duchess-spoiler"]
+      }
+    ],
+    "transitions": [
+      {
+        "id": "transition:galleria-to-producer",
+        "from": "event:galleria-entry",
+        "to": "event:producer-monologue",
+        "label": "Enter the central atrium"
+      }
+    ]
+  }
+}
