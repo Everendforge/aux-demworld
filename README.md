@@ -13,6 +13,35 @@ The setting parodies broad genre conventions—space dynasties, wizard schools, 
 - A Compendium configuration that publishes canon and proposal material.
 - A repository validator and GitHub Actions workflow.
 
+## Application boundaries
+
+| Application   | Example data in this repository                                                                                       |
+| ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| WorldNotion   | Markdown entities, folder descriptions, `.everend/universe.json`, `.everend/taxonomy.yaml`, and `.everend/templates/` |
+| PathBranching | `.everend/.pathbranching/manifest.json` and the modular v0.2 story workspace                                          |
+| Compendium    | `.everend/compendium.yaml`, publishable entity statuses, and the read-only narrative projection                       |
+
+## Story map
+
+```mermaid
+flowchart LR
+  A[Prophecy overflow] --> B[Impossible audit]
+  B --> C{Choose an alliance}
+  C -->|Ministry| D[Restore official canon]
+  C -->|Freeplot| E[Open shared stories]
+  C -->|Studio| F[Produce the reboot]
+  D --> G[Collect four genre credentials]
+  E --> G
+  F --> G
+  G --> H[Continuity Engine console]
+  H --> I[Patched Canon]
+  H --> J[Stories in Common]
+  H --> K[Prestige Reboot]
+  H --> L[Executive Promotion]
+  H --> M[Eternal Sequel]
+  H --> N[Ordinary Lunch]
+```
+
 ## Open it in Everend Forge
 
 1. Clone or download this repository.
