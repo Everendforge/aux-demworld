@@ -1,11 +1,11 @@
 {
-  "name": "Everend Forge: Crónica del repositorio",
+  "name": "nombre-de-world (main)",
   "icon": {
     "type": "preset",
     "value": "book-open"
   },
   "taxonomyVersion": "0.1",
-  "branchId": "repo-documentation",
+  "branchId": "nombre-de-world",
   "authoring": "ai",
   "narrator": "first-person"
 }

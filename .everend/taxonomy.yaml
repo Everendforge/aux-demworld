@@ -1,6 +1,6 @@
 specVersion: "0.1"
 branch:
-  id: repo-documentation
+  id: nombre-de-world
   authoring: ai
   propertiesMode: custom
 types:

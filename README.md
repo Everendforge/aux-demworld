@@ -1,6 +1,6 @@
-# aux-demworld — Everend Forge: Crónica del repositorio
+# aux-demworld — nombre-de-world (main)
 
-The primary Git branch is the AI-authored repository-documentation universe. It tells the current state of Everend Forge in first person while remaining a complete WorldNotion and PathBranching demo.
+The primary Git branch is `nombre-de-world`, displayed as `nombre-de-world (main)`. It is the AI-authored repository-documentation universe and tells the current state of Everend Forge in first person while remaining a complete WorldNotion and PathBranching demo.
 
 The setting parodies broad genre conventions—space dynasties, wizard schools, collectible creatures, municipal superheroes, chosen-one prophecies, and corporate reboots—without using characters, names, settings, or lore from existing franchises.
 

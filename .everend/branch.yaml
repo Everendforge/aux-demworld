@@ -1,6 +1,6 @@
 version: "0.1"
-id: repo-documentation
-label: "Documentación del repositorio"
+id: nombre-de-world
+label: "nombre-de-world (main)"
 role: primary
 authoring: ai
 narrator: first-person
