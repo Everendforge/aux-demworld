@@ -1,11 +1,11 @@
 {
-  "name": "nombre-de-world (main)",
+  "name": "Repository Chronicle",
   "icon": {
     "type": "preset",
     "value": "book-open"
   },
   "taxonomyVersion": "0.1",
-  "branchId": "nombre-de-world",
+  "branchId": "repository-chronicle",
   "authoring": "ai",
   "narrator": "first-person"
 }

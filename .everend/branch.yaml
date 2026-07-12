@@ -1,6 +1,6 @@
 version: "0.1"
-id: nombre-de-world
-label: "nombre-de-world (main)"
+id: repository-chronicle
+label: "Repository Chronicle (main)"
 role: primary
 authoring: ai
 narrator: first-person

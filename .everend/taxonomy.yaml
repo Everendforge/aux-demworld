@@ -1,6 +1,6 @@
 specVersion: "0.1"
 branch:
-  id: nombre-de-world
+  id: repository-chronicle
   authoring: ai
   propertiesMode: custom
 types:
