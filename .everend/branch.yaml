@@ -1,0 +1,15 @@
+version: "0.1"
+id: fantasy-generic
+label: "Fantasía genérica"
+role: alternate
+authoring: ai
+narrator: neutral
+description: "Demo de fantasía reutilizable, independiente de la documentación del repositorio."
+worldnotion:
+  propertiesMode: template
+  template: worldbuilding
+  templateSource: default
+  taxonomy: .everend/taxonomy.yaml
+pathbranching:
+  storyId: generic-fantasy
+  manifest: .everend/.pathbranching/manifest.json

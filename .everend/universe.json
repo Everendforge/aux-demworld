@@ -1,8 +1,11 @@
 {
-  "name": "The Grand Continuity",
+  "name": "The Generic Fantasy Realm",
   "icon": {
     "type": "preset",
     "value": "book-open"
   },
-  "taxonomyVersion": "0.1"
+  "taxonomyVersion": "0.1",
+  "branchId": "fantasy-generic",
+  "authoring": "ai",
+  "propertiesTemplate": "worldbuilding"
 }
