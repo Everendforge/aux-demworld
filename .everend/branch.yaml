@@ -1,0 +1,15 @@
+version: "0.1"
+id: repo-documentation
+label: "Documentación del repositorio"
+role: primary
+authoring: ai
+narrator: first-person
+description: "El estado actual de Everend Forge contado como una historia por su creador."
+worldnotion:
+  propertiesMode: custom
+  taxonomy: .everend/taxonomy.yaml
+  templates:
+    - .everend/templates/documentation.md
+pathbranching:
+  storyId: repository-chronicle
+  manifest: .everend/.pathbranching/manifest.json

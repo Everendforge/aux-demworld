@@ -1,6 +1,6 @@
-# aux-demworld — The Grand Continuity
+# aux-demworld — Everend Forge: Crónica del repositorio
 
-An original, synthetic demonstration universe for Everend Forge. It shows how the same vault can be explored in WorldNotion, authored as a branching narrative in PathBranching, and published as a read-only site with Compendium.
+The primary Git branch is the AI-authored repository-documentation universe. It tells the current state of Everend Forge in first person while remaining a complete WorldNotion and PathBranching demo.
 
 The setting parodies broad genre conventions—space dynasties, wizard schools, collectible creatures, municipal superheroes, chosen-one prophecies, and corporate reboots—without using characters, names, settings, or lore from existing franchises.
 
