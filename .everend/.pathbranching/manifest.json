@@ -1,11 +1,11 @@
 {
   "version": "0.2",
-  "activeStoryId": "repository-chronicle",
+  "activeStoryId": "generic-fantasy",
   "stories": [
     {
-      "id": "repository-chronicle",
-      "name": "Crónica de Everend Forge",
-      "path": ".everend/.pathbranching/stories/repository-chronicle/story.json",
+      "id": "generic-fantasy",
+      "name": "The Generic Fantasy Quest",
+      "path": ".everend/.pathbranching/stories/generic-fantasy/story.json",
       "createdAt": "2026-07-12T00:00:00.000Z",
       "updatedAt": "2026-07-12T00:00:00.000Z"
     }

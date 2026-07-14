@@ -1,15 +1,15 @@
 version: "0.1"
-id: repository-chronicle
-label: "Repository Chronicle (main)"
-role: primary
+id: fantasy-generic
+label: "Fantasía genérica"
+role: alternate
 authoring: ai
-narrator: first-person
-description: "El estado actual de Everend Forge contado como una historia por su creador."
+narrator: neutral
+description: "Demo de fantasía reutilizable, independiente de la documentación del repositorio."
 worldnotion:
-  propertiesMode: custom
+  propertiesMode: template
+  template: worldbuilding
+  templateSource: default
   taxonomy: .everend/taxonomy.yaml
-  templates:
-    - .everend/templates/documentation.md
 pathbranching:
-  storyId: repository-chronicle
+  storyId: generic-fantasy
   manifest: .everend/.pathbranching/manifest.json

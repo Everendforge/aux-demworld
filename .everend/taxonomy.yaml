@@ -1,33 +1,10 @@
 specVersion: "0.1"
 branch:
-  id: repository-chronicle
+  id: fantasy-generic
   authoring: ai
-  propertiesMode: custom
+  propertiesMode: template
+  template: worldbuilding
 types:
-  repository:
-    label: Repository
-    description: The repository as the top-level narrative subject.
-    properties:
-      narrativeRole:
-        type: select
-        options: [opening, chapter, conflict, decision, milestone, appendix]
-      authoring:
-        type: select
-        options: [ai, human, assisted]
-  documentation:
-    label: Documentation
-    description: A repository document rewritten as a first-person story chapter.
-    properties:
-      sourcePath:
-        type: text
-      artifactKind:
-        type: select
-        options: [documentation, application, specification, test, configuration, roadmap]
-      repositoryStatus:
-        type: select
-        options: [planned, active, stable, deprecated, blocked]
-      nextStep:
-        type: text
   universe:
     label: Universe
     description: The top-level continuity and its governing premise.

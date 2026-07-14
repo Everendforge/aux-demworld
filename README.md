@@ -1,6 +1,6 @@
-# aux-demworld — Repository Chronicle (main)
+# aux-demworld — The Grand Continuity
 
-The primary Git branch is `repository-chronicle`, displayed as `Repository Chronicle (main)`. It is the AI-authored repository-documentation universe and tells the current state of Everend Forge in first person while remaining a complete WorldNotion and PathBranching demo.
+An original, synthetic demonstration universe for Everend Forge. It shows how the same vault can be explored in WorldNotion, authored as a branching narrative in PathBranching, and published as a read-only site with Compendium.
 
 The setting parodies broad genre conventions—space dynasties, wizard schools, collectible creatures, municipal superheroes, chosen-one prophecies, and corporate reboots—without using characters, names, settings, or lore from existing franchises.
 

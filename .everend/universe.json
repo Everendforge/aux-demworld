@@ -1,11 +1,11 @@
 {
-  "name": "Repository Chronicle",
+  "name": "The Generic Fantasy Realm",
   "icon": {
     "type": "preset",
     "value": "book-open"
   },
   "taxonomyVersion": "0.1",
-  "branchId": "repository-chronicle",
+  "branchId": "fantasy-generic",
   "authoring": "ai",
-  "narrator": "first-person"
+  "propertiesTemplate": "worldbuilding"
 }
