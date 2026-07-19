@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:galleria-entry",
@@ -27,7 +27,26 @@
           "format": "plain",
           "content": "They filmed six endings. Let us make the seventh thing they fear: an unscheduled decision."
         },
-        "canonRefs": ["duchess-spoiler"]
+        "canonRefs": [
+          "duchess-spoiler"
+        ],
+        "entryBeatId": "beat:dialogue:duchess-improvise:1",
+        "beats": [
+          {
+            "id": "beat:dialogue:duchess-improvise:1",
+            "kind": "speech",
+            "blockRef": {
+              "scriptId": "script:dialogue:event:galleria-entry:dialogue:duchess-improvise",
+              "blockId": "block:dialogue:duchess-improvise:speech"
+            }
+          }
+        ],
+        "members": [
+          {
+            "kind": "beat",
+            "id": "beat:dialogue:duchess-improvise:1"
+          }
+        ]
       }
     ],
     "transitions": [
@@ -35,8 +54,21 @@
         "id": "transition:galleria-to-producer",
         "from": "event:galleria-entry",
         "to": "event:producer-monologue",
-        "label": "Enter the central atrium"
+        "label": "Enter the central atrium",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "finale-galleria",
+      "duchess-spoiler",
+      "continuity-engine",
+      "present-convergence"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

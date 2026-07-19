@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "event": {
     "id": "event:orbital-coupon",
@@ -28,18 +28,40 @@
             "id": "outcome:coupon-invoice",
             "name": "Approve a compensating invoice",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 1 },
-              { "type": "unlockCanonEntry", "ref": "stellar-plot-coupon" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 1
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "stellar-plot-coupon"
+              }
+            ],
+            "visibleText": "Approve a compensating invoice",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:coupon-stunt",
             "name": "Perform the impossible maneuver first",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 1 },
-              { "type": "setVariable", "name": "spectacle", "value": 4 },
-              { "type": "unlockCanonEntry", "ref": "stellar-plot-coupon" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 1
+              },
+              {
+                "type": "setVariable",
+                "name": "spectacle",
+                "value": 4
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "stellar-plot-coupon"
+              }
+            ],
+            "visibleText": "Perform the impossible maneuver first",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -49,8 +71,28 @@
         "id": "transition:orbit-to-academy",
         "from": "event:orbital-coupon",
         "to": "event:wand-exam",
-        "label": "Plot a course for Hexford"
+        "label": "Plot a course for Hexford",
+        "order": 0,
+        "mode": "conditional"
+      },
+      {
+        "id": "transition:event:orbital-coupon:event:sequence:credentials:normal:1",
+        "from": "event:orbital-coupon",
+        "to": "event:sequence:credentials:normal",
+        "source": "graph",
+        "order": 1,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "captain-sol-ledger",
+      "orbital-cantina-nine",
+      "stellar-plot-coupon"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

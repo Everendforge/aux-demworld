@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:alliances",
   "event": {
     "id": "event:studio-lunch",
@@ -29,17 +29,37 @@
             "id": "outcome:creative-control",
             "name": "Demand final cut",
             "consequences": [
-              { "type": "setVariable", "name": "spectacle", "value": 4 },
-              { "type": "setVariable", "name": "ambition", "value": true }
-            ]
+              {
+                "type": "setVariable",
+                "name": "spectacle",
+                "value": 4
+              },
+              {
+                "type": "setVariable",
+                "name": "ambition",
+                "value": true
+              }
+            ],
+            "visibleText": "Demand final cut",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:inside-job",
             "name": "Pretend to accept",
             "consequences": [
-              { "type": "setVariable", "name": "spectacle", "value": 3 },
-              { "type": "setVariable", "name": "ambition", "value": false }
-            ]
+              {
+                "type": "setVariable",
+                "name": "spectacle",
+                "value": 3
+              },
+              {
+                "type": "setVariable",
+                "name": "ambition",
+                "value": false
+              }
+            ],
+            "visibleText": "Pretend to accept",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -49,8 +69,21 @@
         "id": "transition:studio-to-convergence",
         "from": "event:studio-lunch",
         "to": "event:alliance-convergence",
-        "label": "Receive a production budget"
+        "label": "Receive a production budget",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "executive-producer",
+      "duchess-spoiler",
+      "continuity-studios",
+      "reboot-cycle"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

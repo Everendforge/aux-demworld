@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:ending-prestige-reboot",
@@ -18,6 +18,19 @@
       "executive-producer",
       "reboot-cycle",
       "professor-beige"
-    ]
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "continuity-studios",
+      "executive-producer",
+      "reboot-cycle",
+      "professor-beige"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": [],
+    "transitions": []
   }
 }

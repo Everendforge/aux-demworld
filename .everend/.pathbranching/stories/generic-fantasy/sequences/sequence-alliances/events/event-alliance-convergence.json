@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:alliances",
   "event": {
     "id": "event:alliance-convergence",
@@ -25,8 +25,24 @@
         "id": "transition:convergence-to-orbit",
         "from": "event:alliance-convergence",
         "to": "event:orbital-coupon",
-        "label": "Begin the credential circuit"
+        "label": "Begin the credential circuit",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "continuity-engine",
+      "captain-sol-ledger",
+      "stellar-plot-coupon",
+      "provisional-wand-license",
+      "mutual-aid-badge",
+      "emergency-cape-permit"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

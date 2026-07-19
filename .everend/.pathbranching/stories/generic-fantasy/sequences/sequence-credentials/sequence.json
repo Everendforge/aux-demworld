@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequence": {
     "id": "sequence:credentials",
     "name": "The Four Genre Credentials",
@@ -11,7 +11,10 @@
       "event:wand-exam",
       "event:creature-arbitration",
       "event:cape-permit-test",
-      "event:credentials-assembled"
+      "event:credentials-assembled",
+      "event:sequence:credentials:normal",
+      "event:sequence:credentials:final",
+      "event:sequence:credentials:final-2"
     ],
     "branchIds": [
       "branch:stellar",

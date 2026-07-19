@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:ending-patched-canon",
@@ -19,6 +19,24 @@
       "ministry-narrative-compliance",
       "canon-debt"
     ],
-    "unlocks": [{ "type": "unlockCanonEntry", "ref": "canon-debt" }]
+    "unlocks": [
+      {
+        "type": "unlockCanonEntry",
+        "ref": "canon-debt"
+      }
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "continuity-engine",
+      "red-stamp-canon",
+      "ministry-narrative-compliance",
+      "canon-debt"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": [],
+    "transitions": []
   }
 }

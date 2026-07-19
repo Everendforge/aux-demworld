@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:ending-ordinary-lunch",
@@ -17,6 +17,18 @@
       "nana-null",
       "office-prophecy-allocation",
       "continuity-engine"
-    ]
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "nana-null",
+      "office-prophecy-allocation",
+      "continuity-engine"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": [],
+    "transitions": []
   }
 }

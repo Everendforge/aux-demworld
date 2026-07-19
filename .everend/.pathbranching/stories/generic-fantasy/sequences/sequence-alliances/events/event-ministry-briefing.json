@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:alliances",
   "event": {
     "id": "event:ministry-briefing",
@@ -28,16 +28,32 @@
             "id": "outcome:protect-memories",
             "name": "Preserve contradictory memories",
             "consequences": [
-              { "type": "setVariable", "name": "compliance", "value": 3 },
-              { "type": "setVariable", "name": "solidarity", "value": 1 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "compliance",
+                "value": 3
+              },
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 1
+              }
+            ],
+            "visibleText": "Preserve contradictory memories",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:accept-clean-canon",
             "name": "Prioritize a clean canon",
             "consequences": [
-              { "type": "setVariable", "name": "compliance", "value": 4 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "compliance",
+                "value": 4
+              }
+            ],
+            "visibleText": "Prioritize a clean canon",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -47,8 +63,20 @@
         "id": "transition:ministry-to-convergence",
         "from": "event:ministry-briefing",
         "to": "event:alliance-convergence",
-        "label": "Receive Ministry access"
+        "label": "Receive Ministry access",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "ministry-narrative-compliance",
+      "red-stamp-canon",
+      "canon-debt"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

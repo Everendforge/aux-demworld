@@ -1,12 +1,14 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:alliances",
   "branch": {
     "id": "branch:freeplot",
     "title": "Open the Stories",
     "description": "Help Freeplot distribute stewardship of the shared canon.",
     "color": "#54A24B",
-    "eventIds": ["event:freeplot-pitch"]
+    "eventIds": [
+      "event:freeplot-pitch"
+    ]
   }
 }

@@ -1,0 +1,53 @@
+specVersion: "0.1"
+mappings:
+  - id: worldnotion:character
+    classId: class:Speaker
+    worldnotionTypes:
+      - character
+    roles:
+      - speaker
+      - presentation
+    comparableProperties:
+      - role
+      - affiliation
+    states:
+      - affiliation
+      - relationship
+  - id: worldnotion:knowledge
+    classId: class:KnowledgeEntry
+    worldnotionTypes:
+      - concept
+      - knowledge
+    roles:
+      - knowledge
+      - condition
+      - unlockable
+    states:
+      - known
+      - unlocked
+  - id: worldnotion:item
+    classId: class:RuntimeItem
+    worldnotionTypes:
+      - item
+    roles:
+      - condition
+      - inventory
+      - runtime
+    comparableProperties:
+      - rarity
+    states:
+      - owned
+      - equipped
+      - consumed
+  - id: worldnotion:location
+    classId: class:SceneSetting
+    worldnotionTypes:
+      - location
+    roles:
+      - scene
+      - presentation
+    comparableProperties:
+      - climate
+    states:
+      - visited
+      - discovered

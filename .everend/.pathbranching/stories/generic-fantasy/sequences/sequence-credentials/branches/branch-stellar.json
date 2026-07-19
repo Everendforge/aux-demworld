@@ -1,11 +1,13 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "branch": {
     "id": "branch:stellar",
     "title": "Space-Opera Credential",
     "color": "#72B7B2",
-    "eventIds": ["event:orbital-coupon"]
+    "eventIds": [
+      "event:orbital-coupon"
+    ]
   }
 }

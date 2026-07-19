@@ -1,11 +1,13 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "branch": {
     "id": "branch:ending-common",
     "title": "Ending: Stories in Common",
     "color": "#54A24B",
-    "eventIds": ["event:ending-stories-common"]
+    "eventIds": [
+      "event:ending-stories-common"
+    ]
   }
 }

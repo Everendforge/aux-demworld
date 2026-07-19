@@ -1,11 +1,13 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "branch": {
     "id": "branch:creature",
     "title": "Creature-Companion Credential",
     "color": "#59A14F",
-    "eventIds": ["event:creature-arbitration"]
+    "eventIds": [
+      "event:creature-arbitration"
+    ]
   }
 }

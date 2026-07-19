@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:orientation",
   "event": {
     "id": "event:prophecy-overflow",
@@ -25,7 +25,26 @@
           "format": "plain",
           "content": "I would like to appeal this destiny on the grounds that I have a meeting at ten."
         },
-        "canonRefs": ["tess-quill"]
+        "canonRefs": [
+          "tess-quill"
+        ],
+        "entryBeatId": "beat:dialogue:tess-opening:1",
+        "beats": [
+          {
+            "id": "beat:dialogue:tess-opening:1",
+            "kind": "speech",
+            "blockRef": {
+              "scriptId": "script:dialogue:event:prophecy-overflow:dialogue:tess-opening",
+              "blockId": "block:dialogue:tess-opening:speech"
+            }
+          }
+        ],
+        "members": [
+          {
+            "kind": "beat",
+            "id": "beat:dialogue:tess-opening:1"
+          }
+        ]
       }
     ],
     "decisions": [
@@ -39,22 +58,40 @@
             "id": "outcome:open-audit",
             "name": "Open an official audit",
             "consequences": [
-              { "type": "setVariable", "name": "compliance", "value": 1 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "compliance",
+                "value": 1
+              }
+            ],
+            "visibleText": "Open an official audit",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:ask-who-benefits",
             "name": "Ask who benefits",
             "consequences": [
-              { "type": "setVariable", "name": "solidarity", "value": 1 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 1
+              }
+            ],
+            "visibleText": "Ask who benefits",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:request-trailer",
             "name": "Request a trailer first",
             "consequences": [
-              { "type": "setVariable", "name": "spectacle", "value": 1 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "spectacle",
+                "value": 1
+              }
+            ],
+            "visibleText": "Request a trailer first",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -64,8 +101,18 @@
         "id": "transition:prophecy-to-corridor",
         "from": "event:prophecy-overflow",
         "to": "event:not-secret-corridor",
-        "label": "Follow the emergency procedure"
+        "label": "Follow the emergency procedure",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "office-prophecy-allocation",
+      "present-convergence"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

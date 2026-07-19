@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequence": {
     "id": "sequence:alliances",
     "name": "Three Plans and One Transit Lounge",
@@ -12,6 +12,10 @@
       "event:studio-lunch",
       "event:alliance-convergence"
     ],
-    "branchIds": ["branch:ministry", "branch:freeplot", "branch:studio"]
+    "branchIds": [
+      "branch:ministry",
+      "branch:freeplot",
+      "branch:studio"
+    ]
   }
 }

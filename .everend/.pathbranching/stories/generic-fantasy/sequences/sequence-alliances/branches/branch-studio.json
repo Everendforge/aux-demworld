@@ -1,12 +1,14 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:alliances",
   "branch": {
     "id": "branch:studio",
     "title": "Make It Spectacular",
     "description": "Accept Studio resources and shape the reboot from inside.",
     "color": "#E45756",
-    "eventIds": ["event:studio-lunch"]
+    "eventIds": [
+      "event:studio-lunch"
+    ]
   }
 }

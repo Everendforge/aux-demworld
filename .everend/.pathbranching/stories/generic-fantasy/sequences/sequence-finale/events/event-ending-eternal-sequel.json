@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:ending-eternal-sequel",
@@ -18,6 +18,19 @@
       "executive-producer",
       "finale-galleria",
       "continuity-engine"
-    ]
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "duchess-spoiler",
+      "executive-producer",
+      "finale-galleria",
+      "continuity-engine"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": [],
+    "transitions": []
   }
 }

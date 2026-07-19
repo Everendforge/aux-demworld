@@ -1,11 +1,13 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "branch": {
     "id": "branch:arcane",
     "title": "Magic-School Credential",
     "color": "#B279A2",
-    "eventIds": ["event:wand-exam"]
+    "eventIds": [
+      "event:wand-exam"
+    ]
   }
 }

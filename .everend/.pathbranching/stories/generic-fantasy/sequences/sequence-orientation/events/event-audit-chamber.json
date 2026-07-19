@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:orientation",
   "event": {
     "id": "event:audit-chamber",
@@ -28,7 +28,27 @@
           "format": "plain",
           "content": "A healthy continuity is a conversation, dear. A dead one is a filing cabinet with excellent branding."
         },
-        "canonRefs": ["nana-null", "continuity-engine"]
+        "canonRefs": [
+          "nana-null",
+          "continuity-engine"
+        ],
+        "entryBeatId": "beat:dialogue:null-engine:1",
+        "beats": [
+          {
+            "id": "beat:dialogue:null-engine:1",
+            "kind": "speech",
+            "blockRef": {
+              "scriptId": "script:dialogue:event:audit-chamber:dialogue:null-engine",
+              "blockId": "block:dialogue:null-engine:speech"
+            }
+          }
+        ],
+        "members": [
+          {
+            "kind": "beat",
+            "id": "beat:dialogue:null-engine:1"
+          }
+        ]
       }
     ],
     "decisions": [
@@ -41,15 +61,26 @@
             "id": "outcome:carry-stamp",
             "name": "Carry it as a tool, not a crown",
             "consequences": [
-              { "type": "unlockCanonEntry", "ref": "red-stamp-canon" }
-            ]
+              {
+                "type": "unlockCanonEntry",
+                "ref": "red-stamp-canon"
+              }
+            ],
+            "visibleText": "Carry it as a tool, not a crown",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:leave-stamp",
             "name": "Leave it on the table",
             "consequences": [
-              { "type": "setVariable", "name": "solidarity", "value": 1 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 1
+              }
+            ],
+            "visibleText": "Leave it on the table",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -59,8 +90,21 @@
         "id": "transition:audit-to-alliance",
         "from": "event:audit-chamber",
         "to": "event:choose-alliance",
-        "label": "Hear the competing plans"
+        "label": "Hear the competing plans",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "nana-null",
+      "continuity-engine",
+      "red-stamp-canon",
+      "reboot-cycle",
+      "canon-debt"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

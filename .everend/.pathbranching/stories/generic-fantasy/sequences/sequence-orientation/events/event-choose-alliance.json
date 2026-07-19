@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:orientation",
   "event": {
     "id": "event:choose-alliance",
@@ -29,26 +29,60 @@
             "id": "outcome:route-ministry",
             "name": "Restore the official canon",
             "consequences": [
-              { "type": "setVariable", "name": "route", "value": "ministry" },
-              { "type": "setVariable", "name": "compliance", "value": 2 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "route",
+                "value": "ministry"
+              },
+              {
+                "type": "setVariable",
+                "name": "compliance",
+                "value": 2
+              }
+            ],
+            "visibleText": "Restore the official canon",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:route-freeplot",
             "name": "Open the stories",
             "consequences": [
-              { "type": "setVariable", "name": "route", "value": "freeplot" },
-              { "type": "setVariable", "name": "solidarity", "value": 2 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "route",
+                "value": "freeplot"
+              },
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 2
+              }
+            ],
+            "visibleText": "Open the stories",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:route-studio",
             "name": "Make the reboot spectacular",
             "consequences": [
-              { "type": "setVariable", "name": "route", "value": "studio" },
-              { "type": "setVariable", "name": "spectacle", "value": 2 },
-              { "type": "setVariable", "name": "ambition", "value": true }
-            ]
+              {
+                "type": "setVariable",
+                "name": "route",
+                "value": "studio"
+              },
+              {
+                "type": "setVariable",
+                "name": "spectacle",
+                "value": 2
+              },
+              {
+                "type": "setVariable",
+                "name": "ambition",
+                "value": true
+              }
+            ],
+            "visibleText": "Make the reboot spectacular",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -64,7 +98,9 @@
           "name": "route",
           "operator": "==",
           "value": "ministry"
-        }
+        },
+        "order": 0,
+        "mode": "conditional"
       },
       {
         "id": "transition:alliance-to-freeplot",
@@ -76,7 +112,9 @@
           "name": "route",
           "operator": "==",
           "value": "freeplot"
-        }
+        },
+        "order": 1,
+        "mode": "conditional"
       },
       {
         "id": "transition:alliance-to-studio",
@@ -88,8 +126,21 @@
           "name": "route",
           "operator": "==",
           "value": "studio"
-        }
+        },
+        "order": 2,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "meridian-junction",
+      "ministry-narrative-compliance",
+      "freeplot-cooperative",
+      "continuity-studios"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

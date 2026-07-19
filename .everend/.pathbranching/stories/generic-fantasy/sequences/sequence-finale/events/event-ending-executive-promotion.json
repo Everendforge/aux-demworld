@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:ending-executive-promotion",
@@ -17,6 +17,18 @@
       "executive-producer",
       "continuity-studios",
       "duchess-spoiler"
-    ]
+    ],
+    "childEventIds": [],
+    "decisions": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "executive-producer",
+      "continuity-studios",
+      "duchess-spoiler"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": [],
+    "transitions": []
   }
 }

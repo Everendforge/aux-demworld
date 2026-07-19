@@ -1,11 +1,13 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "branch": {
     "id": "branch:ending-patched",
     "title": "Ending: Patched Canon",
     "color": "#4C78A8",
-    "eventIds": ["event:ending-patched-canon"]
+    "eventIds": [
+      "event:ending-patched-canon"
+    ]
   }
 }

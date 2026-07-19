@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "event": {
     "id": "event:creature-arbitration",
@@ -29,19 +29,45 @@
             "id": "outcome:full-settlement",
             "name": "Approve the full settlement",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 3 },
-              { "type": "setVariable", "name": "solidarity", "value": 4 },
-              { "type": "unlockCanonEntry", "ref": "mutual-aid-badge" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 3
+              },
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 4
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "mutual-aid-badge"
+              }
+            ],
+            "visibleText": "Approve the full settlement",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:mediation",
             "name": "Negotiate phased reimbursement",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 3 },
-              { "type": "setVariable", "name": "solidarity", "value": 3 },
-              { "type": "unlockCanonEntry", "ref": "mutual-aid-badge" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 3
+              },
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 3
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "mutual-aid-badge"
+              }
+            ],
+            "visibleText": "Negotiate phased reimbursement",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -51,8 +77,21 @@
         "id": "transition:wilds-to-cape",
         "from": "event:creature-arbitration",
         "to": "event:cape-permit-test",
-        "label": "Answer Cape City's emergency call"
+        "label": "Answer Cape City's emergency call",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "sprig-nine",
+      "bureaucratodon",
+      "collectible-wilds",
+      "mutual-aid-badge"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

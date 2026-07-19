@@ -1,22 +1,31 @@
 ---
-id: last-acceptable-reboot
 type: story
-name: The Last Acceptable Reboot
-status: canon
-tags: [branching, adventure, parody]
-aliases: [The Reboot Audit]
+status: in-progress
+aliases:
+  - The Reboot Audit
 childrenIds:
-  [
-    scene-prophecy-overflow,
-    scene-route-selection,
-    scene-orbital-coupon,
-    scene-wand-exam,
-    scene-creature-arbitration,
-    scene-cape-crisis,
-    scene-final-galleria,
-    scene-continuity-choice,
-  ]
-draftStatus: revised
+  - scene-prophecy-overflow
+  - scene-route-selection
+  - scene-orbital-coupon
+  - scene-wand-exam
+  - scene-creature-arbitration
+  - scene-cape-crisis
+  - scene-final-galleria
+  - scene-continuity-choice
+lore-level: canon
+place:
+  location: finale-galleria
+narrative:
+  arc: turning-point
+  participants:
+    - duchess-spoiler
+    - paladin-patch
+id: last-acceptable-reboot
+name: The Last Acceptable Reboot
+tags:
+  - branching
+  - adventure
+  - parody
 ---
 
 # The Last Acceptable Reboot

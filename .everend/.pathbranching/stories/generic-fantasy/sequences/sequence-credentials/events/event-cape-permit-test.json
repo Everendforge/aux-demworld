@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "event": {
     "id": "event:cape-permit-test",
@@ -28,19 +28,45 @@
             "id": "outcome:civic-response",
             "name": "Coordinate a public response",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 4 },
-              { "type": "setVariable", "name": "compliance", "value": 4 },
-              { "type": "unlockCanonEntry", "ref": "emergency-cape-permit" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 4
+              },
+              {
+                "type": "setVariable",
+                "name": "compliance",
+                "value": 4
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "emergency-cape-permit"
+              }
+            ],
+            "visibleText": "Coordinate a public response",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:dramatic-unplug",
             "name": "Unplug it during the monologue",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 4 },
-              { "type": "setVariable", "name": "spectacle", "value": 4 },
-              { "type": "unlockCanonEntry", "ref": "emergency-cape-permit" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 4
+              },
+              {
+                "type": "setVariable",
+                "name": "spectacle",
+                "value": 4
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "emergency-cape-permit"
+              }
+            ],
+            "visibleText": "Unplug it during the monologue",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -50,8 +76,20 @@
         "id": "transition:cape-to-assembly",
         "from": "event:cape-permit-test",
         "to": "event:credentials-assembled",
-        "label": "Assemble the four credentials"
+        "label": "Assemble the four credentials",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "paladin-patch",
+      "cape-city-permit-hall",
+      "emergency-cape-permit"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

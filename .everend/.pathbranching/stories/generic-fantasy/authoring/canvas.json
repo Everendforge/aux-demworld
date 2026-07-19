@@ -1,19 +1,288 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "canvas": {
-    "activeSequenceId": "sequence:orientation",
-    "activeScope": { "kind": "sequence", "id": "sequence:orientation" },
-    "viewport": { "x": 40, "y": 80, "zoom": 0.82 },
+    "activeSequenceId": "sequence:credentials",
+    "activeScope": {
+      "kind": "sequence",
+      "id": "sequence:credentials"
+    },
+    "viewport": {
+      "x": 40,
+      "y": 80,
+      "zoom": 0.82
+    },
     "scopes": {
       "sequence:orientation": {
-        "viewport": { "x": 80, "y": 120, "zoom": 0.9 }
+        "viewport": {
+          "x": 80,
+          "y": 120,
+          "zoom": 0.9
+        }
       },
-      "sequence:alliances": { "viewport": { "x": 60, "y": 100, "zoom": 0.8 } },
+      "sequence:alliances": {
+        "viewport": {
+          "x": 60,
+          "y": 100,
+          "zoom": 0.8
+        }
+      },
       "sequence:credentials": {
-        "viewport": { "x": 50, "y": 90, "zoom": 0.78 }
+        "viewport": {
+          "x": 50,
+          "y": 90,
+          "zoom": 0.78
+        }
       },
-      "sequence:finale": { "viewport": { "x": 20, "y": 70, "zoom": 0.68 } }
+      "sequence:finale": {
+        "viewport": {
+          "x": 20,
+          "y": 70,
+          "zoom": 0.68
+        }
+      },
+      "sequence:sequence:orientation": {
+        "nodes": {
+          "start:sequence:orientation": {
+            "position": {
+              "x": 80,
+              "y": 80
+            }
+          },
+          "event:prophecy-overflow": {
+            "position": {
+              "x": 384,
+              "y": 48
+            }
+          },
+          "event:not-secret-corridor": {
+            "position": {
+              "x": 720,
+              "y": 48
+            }
+          },
+          "event:audit-chamber": {
+            "position": {
+              "x": 1032,
+              "y": 72
+            }
+          },
+          "event:choose-alliance": {
+            "position": {
+              "x": 1416,
+              "y": 72
+            }
+          }
+        }
+      },
+      "sequence:sequence:alliances": {
+        "nodes": {
+          "start:sequence:alliances": {
+            "position": {
+              "x": 80,
+              "y": 80
+            }
+          },
+          "event:ministry-briefing": {
+            "position": {
+              "x": 384,
+              "y": 48
+            }
+          },
+          "event:freeplot-pitch": {
+            "position": {
+              "x": 1032,
+              "y": -96
+            }
+          },
+          "event:studio-lunch": {
+            "position": {
+              "x": 384,
+              "y": 336
+            }
+          },
+          "event:alliance-convergence": {
+            "position": {
+              "x": 696,
+              "y": 48
+            }
+          }
+        }
+      },
+      "sequence:sequence:credentials": {
+        "nodes": {
+          "start:sequence:credentials": {
+            "position": {
+              "x": 80,
+              "y": 80
+            }
+          },
+          "event:orbital-coupon": {
+            "position": {
+              "x": 336,
+              "y": 72
+            }
+          },
+          "event:wand-exam": {
+            "position": {
+              "x": 648,
+              "y": 72
+            }
+          },
+          "event:creature-arbitration": {
+            "position": {
+              "x": 960,
+              "y": 72
+            }
+          },
+          "event:cape-permit-test": {
+            "position": {
+              "x": 1272,
+              "y": 72
+            }
+          },
+          "event:credentials-assembled": {
+            "position": {
+              "x": 1584,
+              "y": 48
+            }
+          },
+          "event:sequence:credentials:normal": {
+            "position": {
+              "x": 672,
+              "y": -144
+            }
+          },
+          "event:sequence:credentials:final": {
+            "position": {
+              "x": 1008,
+              "y": -144
+            }
+          },
+          "event:sequence:credentials:final-2": {
+            "position": {
+              "x": 1008,
+              "y": -360
+            }
+          }
+        }
+      }
+    },
+    "nodes": {
+      "start:sequence:orientation": {
+        "position": {
+          "x": 80,
+          "y": 80
+        }
+      },
+      "event:prophecy-overflow": {
+        "position": {
+          "x": 384,
+          "y": 48
+        }
+      },
+      "event:not-secret-corridor": {
+        "position": {
+          "x": 720,
+          "y": 48
+        }
+      },
+      "event:audit-chamber": {
+        "position": {
+          "x": 1032,
+          "y": 72
+        }
+      },
+      "event:choose-alliance": {
+        "position": {
+          "x": 1416,
+          "y": 72
+        }
+      },
+      "start:sequence:alliances": {
+        "position": {
+          "x": 80,
+          "y": 80
+        }
+      },
+      "event:ministry-briefing": {
+        "position": {
+          "x": 384,
+          "y": 48
+        }
+      },
+      "event:freeplot-pitch": {
+        "position": {
+          "x": 1032,
+          "y": -96
+        }
+      },
+      "event:studio-lunch": {
+        "position": {
+          "x": 384,
+          "y": 336
+        }
+      },
+      "event:alliance-convergence": {
+        "position": {
+          "x": 696,
+          "y": 48
+        }
+      },
+      "start:sequence:credentials": {
+        "position": {
+          "x": 80,
+          "y": 80
+        }
+      },
+      "event:orbital-coupon": {
+        "position": {
+          "x": 336,
+          "y": 72
+        }
+      },
+      "event:wand-exam": {
+        "position": {
+          "x": 648,
+          "y": 72
+        }
+      },
+      "event:creature-arbitration": {
+        "position": {
+          "x": 960,
+          "y": 72
+        }
+      },
+      "event:cape-permit-test": {
+        "position": {
+          "x": 1272,
+          "y": 72
+        }
+      },
+      "event:credentials-assembled": {
+        "position": {
+          "x": 1584,
+          "y": 48
+        }
+      },
+      "event:sequence:credentials:normal": {
+        "position": {
+          "x": 672,
+          "y": -144
+        }
+      },
+      "event:sequence:credentials:final": {
+        "position": {
+          "x": 1008,
+          "y": -144
+        }
+      },
+      "event:sequence:credentials:final-2": {
+        "position": {
+          "x": 1008,
+          "y": -360
+        }
+      }
     }
   },
   "panels": {

@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequence": {
     "id": "sequence:orientation",
     "name": "Mandatory Chosen-One Orientation",

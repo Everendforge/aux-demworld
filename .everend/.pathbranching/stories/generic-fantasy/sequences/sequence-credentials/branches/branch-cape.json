@@ -1,11 +1,13 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "branch": {
     "id": "branch:cape",
     "title": "Municipal-Hero Credential",
     "color": "#F28E2B",
-    "eventIds": ["event:cape-permit-test"]
+    "eventIds": [
+      "event:cape-permit-test"
+    ]
   }
 }

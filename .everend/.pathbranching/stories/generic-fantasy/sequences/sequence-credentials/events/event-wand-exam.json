@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:credentials",
   "event": {
     "id": "event:wand-exam",
@@ -27,7 +27,26 @@
           "format": "plain",
           "content": "Magic is the easy part. The difficult part is deciding who must live with it afterward."
         },
-        "canonRefs": ["professor-beige"]
+        "canonRefs": [
+          "professor-beige"
+        ],
+        "entryBeatId": "beat:dialogue:beige-exam:1",
+        "beats": [
+          {
+            "id": "beat:dialogue:beige-exam:1",
+            "kind": "speech",
+            "blockRef": {
+              "scriptId": "script:dialogue:event:wand-exam:dialogue:beige-exam",
+              "blockId": "block:dialogue:beige-exam:speech"
+            }
+          }
+        ],
+        "members": [
+          {
+            "kind": "beat",
+            "id": "beat:dialogue:beige-exam:1"
+          }
+        ]
       }
     ],
     "decisions": [
@@ -40,18 +59,40 @@
             "id": "outcome:fifth-answer",
             "name": "Reject the premise",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 2 },
-              { "type": "unlockCanonEntry", "ref": "provisional-wand-license" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 2
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "provisional-wand-license"
+              }
+            ],
+            "visibleText": "Reject the premise",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:all-answers",
             "name": "Circle every answer and annotate",
             "consequences": [
-              { "type": "setVariable", "name": "keyCount", "value": 2 },
-              { "type": "setVariable", "name": "compliance", "value": 3 },
-              { "type": "unlockCanonEntry", "ref": "provisional-wand-license" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "keyCount",
+                "value": 2
+              },
+              {
+                "type": "setVariable",
+                "name": "compliance",
+                "value": 3
+              },
+              {
+                "type": "unlockCanonEntry",
+                "ref": "provisional-wand-license"
+              }
+            ],
+            "visibleText": "Circle every answer and annotate",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -61,8 +102,19 @@
         "id": "transition:academy-to-wilds",
         "from": "event:wand-exam",
         "to": "event:creature-arbitration",
-        "label": "Take the field practicum"
+        "label": "Take the field practicum",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "professor-beige",
+      "hexford-academy-annex",
+      "provisional-wand-license"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

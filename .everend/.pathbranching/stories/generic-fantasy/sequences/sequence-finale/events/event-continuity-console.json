@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:continuity-console",
@@ -47,8 +47,30 @@
               ]
             },
             "consequences": [
-              { "type": "setVariable", "name": "ending", "value": "patched" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ending",
+                "value": "patched"
+              }
+            ],
+            "visibleText": "Patch the shared canon",
+            "availability": {
+              "all": [
+                {
+                  "type": "variable",
+                  "name": "keyCount",
+                  "operator": ">=",
+                  "value": 4
+                },
+                {
+                  "type": "variable",
+                  "name": "compliance",
+                  "operator": ">=",
+                  "value": 2
+                }
+              ]
+            },
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:ending-common",
@@ -60,8 +82,20 @@
               "value": 2
             },
             "consequences": [
-              { "type": "setVariable", "name": "ending", "value": "common" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ending",
+                "value": "common"
+              }
+            ],
+            "visibleText": "Release the stories into common stewardship",
+            "availability": {
+              "type": "variable",
+              "name": "solidarity",
+              "operator": ">=",
+              "value": 2
+            },
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:ending-reboot",
@@ -73,8 +107,20 @@
               "value": 2
             },
             "consequences": [
-              { "type": "setVariable", "name": "ending", "value": "reboot" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ending",
+                "value": "reboot"
+              }
+            ],
+            "visibleText": "Authorize a prestige reboot",
+            "availability": {
+              "type": "variable",
+              "name": "spectacle",
+              "operator": ">=",
+              "value": 2
+            },
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:ending-promotion",
@@ -86,15 +132,33 @@
               "value": true
             },
             "consequences": [
-              { "type": "setVariable", "name": "ending", "value": "promotion" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ending",
+                "value": "promotion"
+              }
+            ],
+            "visibleText": "Accept the executive promotion",
+            "availability": {
+              "type": "variable",
+              "name": "ambition",
+              "operator": "==",
+              "value": true
+            },
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:ending-sequel",
             "name": "Delay the answer until the sequel",
             "consequences": [
-              { "type": "setVariable", "name": "ending", "value": "sequel" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ending",
+                "value": "sequel"
+              }
+            ],
+            "visibleText": "Delay the answer until the sequel",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:ending-lunch",
@@ -106,8 +170,20 @@
               "value": true
             },
             "consequences": [
-              { "type": "setVariable", "name": "ending", "value": "lunch" }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ending",
+                "value": "lunch"
+              }
+            ],
+            "visibleText": "Use the ordinary emergency exit",
+            "availability": {
+              "type": "variable",
+              "name": "noticedBreakRoom",
+              "operator": "==",
+              "value": true
+            },
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -123,7 +199,9 @@
           "name": "ending",
           "operator": "==",
           "value": "patched"
-        }
+        },
+        "order": 0,
+        "mode": "conditional"
       },
       {
         "id": "transition:console-to-common",
@@ -135,7 +213,9 @@
           "name": "ending",
           "operator": "==",
           "value": "common"
-        }
+        },
+        "order": 1,
+        "mode": "conditional"
       },
       {
         "id": "transition:console-to-reboot",
@@ -147,7 +227,9 @@
           "name": "ending",
           "operator": "==",
           "value": "reboot"
-        }
+        },
+        "order": 2,
+        "mode": "conditional"
       },
       {
         "id": "transition:console-to-promotion",
@@ -159,7 +241,9 @@
           "name": "ending",
           "operator": "==",
           "value": "promotion"
-        }
+        },
+        "order": 3,
+        "mode": "conditional"
       },
       {
         "id": "transition:console-to-sequel",
@@ -171,7 +255,9 @@
           "name": "ending",
           "operator": "==",
           "value": "sequel"
-        }
+        },
+        "order": 4,
+        "mode": "conditional"
       },
       {
         "id": "transition:console-to-lunch",
@@ -183,8 +269,23 @@
           "name": "ending",
           "operator": "==",
           "value": "lunch"
-        }
+        },
+        "order": 5,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "continuity-engine",
+      "red-stamp-canon",
+      "ministry-narrative-compliance",
+      "freeplot-cooperative",
+      "continuity-studios",
+      "nana-null"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

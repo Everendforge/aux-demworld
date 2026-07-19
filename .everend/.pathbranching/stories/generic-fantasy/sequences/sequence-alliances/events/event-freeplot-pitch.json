@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:alliances",
   "event": {
     "id": "event:freeplot-pitch",
@@ -29,15 +29,27 @@
             "id": "outcome:shared-maintenance",
             "name": "Commit to shared maintenance",
             "consequences": [
-              { "type": "setVariable", "name": "solidarity", "value": 4 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 4
+              }
+            ],
+            "visibleText": "Commit to shared maintenance",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:local-forks",
             "name": "Let every community fork freely",
             "consequences": [
-              { "type": "setVariable", "name": "solidarity", "value": 3 }
-            ]
+              {
+                "type": "setVariable",
+                "name": "solidarity",
+                "value": 3
+              }
+            ],
+            "visibleText": "Let every community fork freely",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -47,8 +59,21 @@
         "id": "transition:freeplot-to-convergence",
         "from": "event:freeplot-pitch",
         "to": "event:alliance-convergence",
-        "label": "Receive community support"
+        "label": "Receive community support",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "dialogues": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "freeplot-cooperative",
+      "captain-sol-ledger",
+      "nana-null",
+      "sprig-nine"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }

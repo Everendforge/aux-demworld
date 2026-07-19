@@ -3,243 +3,2904 @@
   "specVersion": "0.1",
   "projectId": "pathbranching:generic-fantasy",
   "storyId": "generic-fantasy",
-  "universeRootPath": ".",
+  "universeRootPath": "D:\\Repositorio\\Apps\\Everend Forge\\aux-demworld",
   "name": "The Generic Fantasy Quest",
   "sourceVault": {
     "kind": "worldnotion",
     "relativePath": "."
   },
+  "dataClasses": [
+    {
+      "id": "class:KnowledgeEntry",
+      "label": "Knowledge Entry",
+      "category": "canonProjection",
+      "roles": [
+        "knowledge",
+        "unlockable",
+        "runtime"
+      ],
+      "fields": [
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "text",
+          "label": "Body"
+        },
+        {
+          "name": "sourceRef",
+          "type": "canonRef",
+          "label": "Canon Source"
+        },
+        {
+          "name": "unlockedByDefault",
+          "type": "boolean",
+          "label": "Unlocked By Default",
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "id": "class:Speaker",
+      "label": "Speaker",
+      "category": "narrative",
+      "roles": [
+        "speaker",
+        "presentation"
+      ],
+      "fields": [
+        {
+          "name": "displayName",
+          "type": "text",
+          "label": "Display Name",
+          "required": true
+        },
+        {
+          "name": "canonRef",
+          "type": "canonRef",
+          "label": "Canon Source"
+        },
+        {
+          "name": "voice",
+          "type": "text",
+          "label": "Voice"
+        }
+      ]
+    },
+    {
+      "id": "class:RuntimeItem",
+      "label": "Runtime Item",
+      "category": "runtime",
+      "roles": [
+        "condition",
+        "inventory",
+        "runtime"
+      ],
+      "fields": [
+        {
+          "name": "displayName",
+          "type": "text",
+          "label": "Display Name",
+          "required": true
+        },
+        {
+          "name": "itemId",
+          "type": "text",
+          "label": "Runtime Item ID",
+          "required": true
+        },
+        {
+          "name": "startsOwned",
+          "type": "boolean",
+          "label": "Starts Owned",
+          "defaultValue": false
+        }
+      ]
+    },
+    {
+      "id": "class:SceneSetting",
+      "label": "Scene Setting",
+      "category": "narrative",
+      "roles": [
+        "scene",
+        "presentation"
+      ],
+      "fields": [
+        {
+          "name": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "name": "canonRef",
+          "type": "canonRef",
+          "label": "Canon Source"
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "id": "class:QuestFlag",
+      "label": "Quest Flag",
+      "category": "runtime",
+      "roles": [
+        "condition",
+        "state",
+        "runtime"
+      ],
+      "fields": [
+        {
+          "name": "flag",
+          "type": "text",
+          "label": "Flag",
+          "required": true
+        },
+        {
+          "name": "initialValue",
+          "type": "boolean",
+          "label": "Initial Value",
+          "defaultValue": false
+        }
+      ]
+    }
+  ],
+  "projectDataObjects": [],
+  "assets": [],
+  "canonEditSuggestions": [],
+  "projectionRules": [],
+  "graphModules": [],
   "entrySequenceId": "sequence:orientation",
   "eventCategories": [
-    { "id": "normal", "label": "Event" },
-    { "id": "final", "label": "Ending", "terminal": true }
+    {
+      "id": "normal",
+      "label": "Event",
+      "terminal": false
+    },
+    {
+      "id": "final",
+      "label": "Ending",
+      "terminal": true
+    },
+    {
+      "id": "exploration",
+      "label": "Exploration"
+    }
   ],
   "canonRefs": [
-    {
-      "id": "tess-quill",
-      "kind": "character",
-      "label": "Tess Quill",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Characters/Tess-Quill.md"
-    },
     {
       "id": "captain-sol-ledger",
       "kind": "character",
       "label": "Captain Sol Ledger",
+      "preview": "# Captain Sol Ledger\n\nSol commands the _Outstanding Balance_, a cargo ship famous for completing impossible runs and submitting every expense correctly. He claims to be the forgotten heir of a stellar dynasty, but three different dynasties make the same claim and all use the same promotional photograph.\n\nSol helps Tess steal the [[Stellar Plot Coupon]] from [[Orbital Cantina Nine]]. His instinct is to improvise; his secret gift is noticing when improvisation has quietly become a recurring pattern.\n\n## Complication\n\nThe ship's navigation system believes it is Sol's sarcastic co-protagonist and refuses routes that lack emotional payoff.",
+      "tags": [
+        "pilot",
+        "rogue",
+        "space-opera"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Sol",
+        "The Invoice Runner"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "ally",
+        "homeLocation": "orbital-cantina-nine",
+        "affiliations": [
+          "freeplot-cooperative"
+        ]
+      },
+      "frontmatter": {
+        "id": "captain-sol-ledger",
+        "type": "character",
+        "name": "Captain Sol Ledger",
+        "status": "canon",
+        "tags": [
+          "pilot",
+          "rogue",
+          "space-opera"
+        ],
+        "aliases": [
+          "Sol",
+          "The Invoice Runner"
+        ],
+        "role": "ally",
+        "homeLocation": "orbital-cantina-nine",
+        "affiliations": [
+          "freeplot-cooperative"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Characters/Captain-Sol-Ledger.md"
-    },
-    {
-      "id": "professor-beige",
-      "kind": "character",
-      "label": "Professor Beige",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Characters/Professor-Beige.md"
-    },
-    {
-      "id": "paladin-patch",
-      "kind": "character",
-      "label": "Paladin Patch",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Characters/Paladin-Patch.md"
-    },
-    {
-      "id": "sprig-nine",
-      "kind": "character",
-      "label": "Sprig-Nine",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Characters/Sprig-Nine.md"
+      "canonSourcePath": "Characters/Captain-Sol-Ledger.md",
+      "canonSourceModifiedMs": 1783742823842
     },
     {
       "id": "duchess-spoiler",
       "kind": "character",
       "label": "Duchess Spoiler",
+      "preview": "# Duchess Spoiler\n\nDuchess Spoiler enters every room knowing what will happen five minutes later and is furious that nobody appreciates the efficiency. She was raised by a prestigious order of masked antagonists who reveal family secrets during unsafe architectural conditions.\n\nThe Duchess serves [[Continuity Studios]] because the studio gives her advance access to every script. She admires Tess's refusal to perform destiny correctly and may help expose the [[Reboot Cycle]] if Tess proves that surprise has value beyond opening-week revenue.\n\n## Tell\n\nWhen Duchess Spoiler says, \"This is not the part where I betray you,\" it is always technically true and strategically unhelpful.",
+      "tags": [
+        "rival",
+        "antihero",
+        "prophecy"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Duchess",
+        "Lady Obviously"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "rival",
+        "homeLocation": "finale-galleria",
+        "affiliations": [
+          "continuity-studios"
+        ]
+      },
+      "frontmatter": {
+        "id": "duchess-spoiler",
+        "type": "character",
+        "name": "Duchess Spoiler",
+        "status": "canon",
+        "tags": [
+          "rival",
+          "antihero",
+          "prophecy"
+        ],
+        "aliases": [
+          "The Duchess",
+          "Lady Obviously"
+        ],
+        "role": "rival",
+        "homeLocation": "finale-galleria",
+        "affiliations": [
+          "continuity-studios"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Characters/Duchess-Spoiler.md"
-    },
-    {
-      "id": "executive-producer",
-      "kind": "character",
-      "label": "The Executive Producer",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Characters/The-Executive-Producer.md"
+      "canonSourcePath": "Characters/Duchess-Spoiler.md",
+      "canonSourceModifiedMs": 1783742823842
     },
     {
       "id": "nana-null",
       "kind": "character",
       "label": "Nana Null",
+      "preview": "# Nana Null\n\nNana Null is a retired prophecy clerk who learned to erase names from destiny without erasing the people attached to them. She keeps forbidden drafts in recipe boxes and can identify a corrupted timeline by taste.\n\nYears ago, Null helped design the negotiation layer inside the [[Continuity Engine]]. When [[Continuity Studios]] demanded one authoritative timeline, she hid an emergency option in the break-room vending machine.\n\n## Secret\n\nThe supposedly mundane exit ending is not an illusion. Null built a small continuity outside the genre economy where people can have lunch without foreshadowing.",
+      "tags": [
+        "mentor",
+        "archivist",
+        "retired-hero"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Null",
+        "Grandmother of Missing Data"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "mentor",
+        "homeLocation": "office-prophecy-allocation",
+        "affiliations": [
+          "freeplot-cooperative"
+        ]
+      },
+      "frontmatter": {
+        "id": "nana-null",
+        "type": "character",
+        "name": "Nana Null",
+        "status": "canon",
+        "tags": [
+          "mentor",
+          "archivist",
+          "retired-hero"
+        ],
+        "aliases": [
+          "Null",
+          "Grandmother of Missing Data"
+        ],
+        "role": "mentor",
+        "homeLocation": "office-prophecy-allocation",
+        "affiliations": [
+          "freeplot-cooperative"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Characters/Nana-Null.md"
+      "canonSourcePath": "Characters/Nana-Null.md",
+      "canonSourceModifiedMs": 1783742823842
     },
     {
-      "id": "meridian-junction",
-      "kind": "location",
-      "label": "Meridian Junction",
+      "id": "paladin-patch",
+      "kind": "character",
+      "label": "Paladin Patch",
+      "preview": "# Paladin Patch\n\nPaladin Patch is Cape City's licensed emergency retcon specialist. She can temporarily repair broken physics, contradictory backstories, and costume seams, provided the incident is filed before midnight.\n\nPatch carries the [[Emergency Cape Permit]], an authorization powerful enough to make public infrastructure behave heroically for one scene. She mistrusts [[Continuity Studios]] because every sponsored rescue adds a merchandising clause to the victim's medical paperwork.\n\n## Limitation\n\nHer powers solve immediate continuity errors but cannot decide which version deserves to survive. That choice belongs to Tess.",
+      "tags": [
+        "superhero",
+        "municipal",
+        "cape"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Patch",
+        "The Hotfix Hero"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "ally",
+        "homeLocation": "cape-city-permit-hall",
+        "affiliations": [
+          "municipal-heroes-local-404"
+        ]
+      },
+      "frontmatter": {
+        "id": "paladin-patch",
+        "type": "character",
+        "name": "Paladin Patch",
+        "status": "canon",
+        "tags": [
+          "superhero",
+          "municipal",
+          "cape"
+        ],
+        "aliases": [
+          "Patch",
+          "The Hotfix Hero"
+        ],
+        "role": "ally",
+        "homeLocation": "cape-city-permit-hall",
+        "affiliations": [
+          "municipal-heroes-local-404"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Locations/Meridian-Junction.md"
+      "canonSourcePath": "Characters/Paladin-Patch.md",
+      "canonSourceModifiedMs": 1783742823842
     },
     {
-      "id": "office-prophecy-allocation",
-      "kind": "location",
-      "label": "Office of Prophecy Allocation",
+      "id": "professor-beige",
+      "kind": "character",
+      "label": "Professor Beige the Terminal",
+      "preview": "# Professor Beige the Terminal\n\nProfessor Beige is the only wizard to survive seven final battles by scheduling each one during office hours. His robes are aggressively neutral, his hat has tenure, and his wand doubles as a laser pointer.\n\nHe teaches Applied Foreshadowing at the [[Hexford Academy Annex]], where students learn that raw magical talent is no substitute for a valid [[Provisional Wand License]]. Beige knows the [[Continuity Engine]] was never meant to preserve a single perfect canon; it was designed to negotiate among competing versions.\n\n## Advice\n\n\"A prophecy is merely a spoiler with institutional funding.\"",
+      "tags": [
+        "wizard",
+        "teacher",
+        "bureaucracy"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Professor Beige",
+        "The Last Adjunct"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "mentor",
+        "homeLocation": "hexford-academy-annex",
+        "affiliations": [
+          "licensed-wizard-faculty"
+        ]
+      },
+      "frontmatter": {
+        "id": "professor-beige",
+        "type": "character",
+        "name": "Professor Beige the Terminal",
+        "status": "canon",
+        "tags": [
+          "wizard",
+          "teacher",
+          "bureaucracy"
+        ],
+        "aliases": [
+          "Professor Beige",
+          "The Last Adjunct"
+        ],
+        "role": "mentor",
+        "homeLocation": "hexford-academy-annex",
+        "affiliations": [
+          "licensed-wizard-faculty"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Locations/Office-of-Prophecy-Allocation.md"
+      "canonSourcePath": "Characters/Professor-Beige.md",
+      "canonSourceModifiedMs": 1783742823843
     },
     {
-      "id": "orbital-cantina-nine",
-      "kind": "location",
-      "label": "Orbital Cantina Nine",
+      "id": "sprig-nine",
+      "kind": "character",
+      "label": "Sprig-Nine",
+      "preview": "# Sprig-Nine\n\nSprig-Nine is a small moss-covered creature with antlers, static electricity, and a comprehensive understanding of collective bargaining. Trainers once classified Sprig as a starter companion; Sprig now identifies as a labor organizer who occasionally fits in a decorative carrying orb.\n\nSprig guides Tess through the [[Collectible Wilds]] and negotiates access to the [[Mutual Aid Badge]]. Its battle cry translates roughly to: \"Friendship is not an unpaid internship.\"\n\n## Ability\n\nSprig can evolve into whatever form a scene requires, but deliberately remains small because the travel allowance is better.",
+      "tags": [
+        "companion",
+        "creature-rights",
+        "mascot"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Sprig",
+        "Specimen Nine"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "ally",
+        "homeLocation": "collectible-wilds",
+        "affiliations": [
+          "pocket-colossi-union"
+        ]
+      },
+      "frontmatter": {
+        "id": "sprig-nine",
+        "type": "character",
+        "name": "Sprig-Nine",
+        "status": "canon",
+        "tags": [
+          "companion",
+          "creature-rights",
+          "mascot"
+        ],
+        "aliases": [
+          "Sprig",
+          "Specimen Nine"
+        ],
+        "role": "ally",
+        "homeLocation": "collectible-wilds",
+        "affiliations": [
+          "pocket-colossi-union"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Locations/Orbital-Cantina-Nine.md"
+      "canonSourcePath": "Characters/Sprig-Nine.md",
+      "canonSourceModifiedMs": 1783742823845
     },
     {
-      "id": "hexford-academy-annex",
-      "kind": "location",
-      "label": "Hexford Academy Annex",
+      "id": "tess-quill",
+      "kind": "character",
+      "label": "Tess Quill",
+      "preview": "# Tess Quill\n\nTess is a junior continuity auditor whose greatest ambition was to finish a fiscal quarter without discovering a prophecy. During a routine inspection of the [[Continuity Engine]], every destiny index in the building prints her employee number under **Chosen One, Temporary, Benefits Pending**.\n\nShe is observant, dryly funny, and dangerously competent at finding contradictions. Tess can restore the existing canon, release stories from centralized control, accept a lucrative villain contract, authorize a spectacular reboot, or discover that the universe has a perfectly ordinary emergency exit.\n\n## Core conflict\n\nTess wants people to choose their own lives, but she also understands why a shared world needs enough structure to remain legible. Her strongest weapon is the [[Red Sta",
+      "tags": [
+        "protagonist",
+        "auditor",
+        "reluctant-chosen-one"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Assigned Protagonist",
+        "Auditor Quill"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "protagonist",
+        "homeLocation": "meridian-junction",
+        "affiliations": [
+          "ministry-narrative-compliance"
+        ]
+      },
+      "frontmatter": {
+        "id": "tess-quill",
+        "type": "character",
+        "name": "Tess Quill",
+        "status": "canon",
+        "tags": [
+          "protagonist",
+          "auditor",
+          "reluctant-chosen-one"
+        ],
+        "aliases": [
+          "The Assigned Protagonist",
+          "Auditor Quill"
+        ],
+        "role": "protagonist",
+        "homeLocation": "meridian-junction",
+        "affiliations": [
+          "ministry-narrative-compliance"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Locations/Hexford-Academy-Annex.md"
+      "canonSourcePath": "Characters/Tess-Quill.md",
+      "canonSourceModifiedMs": 1783742823845
     },
     {
-      "id": "collectible-wilds",
-      "kind": "location",
-      "label": "Collectible Wilds",
+      "id": "executive-producer",
+      "kind": "character",
+      "label": "The Executive Producer",
+      "preview": "# The Executive Producer\n\nNo surviving document records the Executive Producer's original name. They appear as a perfectly tailored silhouette surrounded by floating audience metrics and speak exclusively in confident revisions.\n\nThe Producer intends to trigger the [[Reboot Cycle]], compressing the Grand Continuity into a safer, younger, more merchandise-compatible timeline. They are not trying to destroy the world; they are trying to make it easier to pitch.\n\n## Offer\n\nTess can become Vice President of Destiny if she stamps the reboot as canon. The salary is excellent, the dental plan covers fangs, and the contract has no final page.",
+      "tags": [
+        "antagonist",
+        "corporate",
+        "reboot"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Executive P",
+        "The Notes"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "role": "antagonist",
+        "homeLocation": "finale-galleria",
+        "affiliations": [
+          "continuity-studios"
+        ]
+      },
+      "frontmatter": {
+        "id": "executive-producer",
+        "type": "character",
+        "name": "The Executive Producer",
+        "status": "canon",
+        "tags": [
+          "antagonist",
+          "corporate",
+          "reboot"
+        ],
+        "aliases": [
+          "Executive P",
+          "The Notes"
+        ],
+        "role": "antagonist",
+        "homeLocation": "finale-galleria",
+        "affiliations": [
+          "continuity-studios"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Locations/Collectible-Wilds.md"
-    },
-    {
-      "id": "cape-city-permit-hall",
-      "kind": "location",
-      "label": "Cape City Permit Hall",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Locations/Cape-City-Permit-Hall.md"
-    },
-    {
-      "id": "finale-galleria",
-      "kind": "location",
-      "label": "Finale Galleria",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Locations/Finale-Galleria.md"
-    },
-    {
-      "id": "ministry-narrative-compliance",
-      "kind": "organization",
-      "label": "Ministry of Narrative Compliance",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Organizations/Ministry-of-Narrative-Compliance.md"
-    },
-    {
-      "id": "freeplot-cooperative",
-      "kind": "organization",
-      "label": "Freeplot Cooperative",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Organizations/Freeplot-Cooperative.md"
-    },
-    {
-      "id": "continuity-studios",
-      "kind": "organization",
-      "label": "Continuity Studios",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Organizations/Continuity-Studios.md"
-    },
-    {
-      "id": "continuity-engine",
-      "kind": "item",
-      "label": "Continuity Engine",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Items/Continuity-Engine.md"
-    },
-    {
-      "id": "stellar-plot-coupon",
-      "kind": "item",
-      "label": "Stellar Plot Coupon",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Items/Stellar-Plot-Coupon.md"
-    },
-    {
-      "id": "provisional-wand-license",
-      "kind": "item",
-      "label": "Provisional Wand License",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Items/Provisional-Wand-License.md"
-    },
-    {
-      "id": "mutual-aid-badge",
-      "kind": "item",
-      "label": "Mutual Aid Badge",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Items/Mutual-Aid-Badge.md"
-    },
-    {
-      "id": "emergency-cape-permit",
-      "kind": "item",
-      "label": "Emergency Cape Permit",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Items/Emergency-Cape-Permit.md"
-    },
-    {
-      "id": "red-stamp-canon",
-      "kind": "item",
-      "label": "Red Stamp of Canon",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Items/Red-Stamp-of-Canon.md"
-    },
-    {
-      "id": "bureaucratodon",
-      "kind": "creature",
-      "label": "Bureaucratodon",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Creatures/Bureaucratodon.md"
-    },
-    {
-      "id": "reboot-cycle",
-      "kind": "concept",
-      "label": "Reboot Cycle",
-      "status": "canon",
-      "source": "worldnotion",
-      "canonSourcePath": "Concepts/Reboot-Cycle.md"
+      "canonSourcePath": "Characters/The-Executive-Producer.md",
+      "canonSourceModifiedMs": 1783742823845
     },
     {
       "id": "canon-debt",
       "kind": "concept",
       "label": "Canon Debt",
+      "preview": "# Canon Debt\n\nEvery forced correction to shared history creates Canon Debt: memories that still exist emotionally after being declared factually impossible. Enough debt produces ghosts, contradictory flashbacks, and citizens who remember attending their own origin stories twice.\n\nThe Ministry records debt as technical error. [[Nana Null]] treats it as testimony from erased worlds.",
+      "tags": [
+        "memory",
+        "consequence",
+        "canon"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Continuity Debt"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "riskLevel": "high",
+        "relatedEntities": [
+          "red-stamp-canon",
+          "reboot-cycle"
+        ]
+      },
+      "frontmatter": {
+        "id": "canon-debt",
+        "type": "concept",
+        "name": "Canon Debt",
+        "status": "canon",
+        "tags": [
+          "memory",
+          "consequence",
+          "canon"
+        ],
+        "aliases": [
+          "Continuity Debt"
+        ],
+        "riskLevel": "high",
+        "relatedEntities": [
+          "red-stamp-canon",
+          "reboot-cycle"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Concepts/Canon-Debt.md"
+      "canonSourcePath": "Concepts/Canon-Debt.md",
+      "canonSourceModifiedMs": 1783742823848
+    },
+    {
+      "id": "chosen-one-allocation",
+      "kind": "concept",
+      "label": "Chosen One Allocation",
+      "preview": "# Chosen One Allocation\n\nDestiny is a finite civic resource assigned by the [[Office of Prophecy Allocation]]. Applicants receive priority for tragic childhoods, symbolic birthmarks, and demonstrated availability during finales.\n\nThe system chooses Tess because her audit credentials give her access to the Engine, then invents a prophecy after the fact to make the assignment feel timeless.",
+      "tags": [
+        "prophecy",
+        "bureaucracy",
+        "heroism"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Destiny Assignment"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "riskLevel": "moderate",
+        "relatedEntities": [
+          "tess-quill",
+          "office-prophecy-allocation"
+        ]
+      },
+      "frontmatter": {
+        "id": "chosen-one-allocation",
+        "type": "concept",
+        "name": "Chosen One Allocation",
+        "status": "canon",
+        "tags": [
+          "prophecy",
+          "bureaucracy",
+          "heroism"
+        ],
+        "aliases": [
+          "Destiny Assignment"
+        ],
+        "riskLevel": "moderate",
+        "relatedEntities": [
+          "tess-quill",
+          "office-prophecy-allocation"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Chosen-One-Allocation.md",
+      "canonSourceModifiedMs": 1783742823848
+    },
+    {
+      "id": "fourth-wall-weather",
+      "kind": "concept",
+      "label": "Fourth-Wall Weather",
+      "preview": "# Fourth-Wall Weather\n\nFourth-Wall Weather is the measurable influence of audience expectation on local reality. Forecasts include exposition fog, montage winds, grimdark pressure systems, and a forty percent chance of cameo.\n\n[[Duchess Spoiler]] senses incoming fronts before anyone else, which is why she always carries an umbrella to emotional climaxes.",
+      "tags": [
+        "metafiction",
+        "climate",
+        "comedy"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Audience Fronts"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "riskLevel": "low",
+        "relatedEntities": [
+          "meridian-junction",
+          "duchess-spoiler"
+        ]
+      },
+      "frontmatter": {
+        "id": "fourth-wall-weather",
+        "type": "concept",
+        "name": "Fourth-Wall Weather",
+        "status": "canon",
+        "tags": [
+          "metafiction",
+          "climate",
+          "comedy"
+        ],
+        "aliases": [
+          "Audience Fronts"
+        ],
+        "riskLevel": "low",
+        "relatedEntities": [
+          "meridian-junction",
+          "duchess-spoiler"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Fourth-Wall-Weather.md",
+      "canonSourceModifiedMs": 1783742823849
+    },
+    {
+      "id": "genre-bleed",
+      "kind": "concept",
+      "label": "Genre Bleed",
+      "preview": "# Genre Bleed\n\nGenre Bleed occurs when the rules, tone, or budget of one narrative region leak into another. Minor cases produce talking swords in police procedurals. Severe cases cause a romantic misunderstanding to acquire orbital weapons.\n\nThe [[Continuity Engine]] manages ordinary bleed by negotiating local rules. The [[Present Convergence]] overwhelms that negotiation layer.",
+      "tags": [
+        "metaphysics",
+        "crossover"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Cross-Genre Leakage"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "riskLevel": "high",
+        "relatedEntities": [
+          "continuity-engine",
+          "meridian-junction"
+        ]
+      },
+      "frontmatter": {
+        "id": "genre-bleed",
+        "type": "concept",
+        "name": "Genre Bleed",
+        "status": "canon",
+        "tags": [
+          "metaphysics",
+          "crossover"
+        ],
+        "aliases": [
+          "Cross-Genre Leakage"
+        ],
+        "riskLevel": "high",
+        "relatedEntities": [
+          "continuity-engine",
+          "meridian-junction"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Genre-Bleed.md",
+      "canonSourceModifiedMs": 1783742823849
+    },
+    {
+      "id": "narrative-gravity",
+      "kind": "concept",
+      "label": "Narrative Gravity",
+      "preview": "# Narrative Gravity\n\nNarrative Gravity pulls meaningful people and objects toward locations with unresolved stakes. It explains why strangers meet in taverns, villains choose visible towers, and every train eventually stops near the protagonist.\n\n[[Finale Galleria]] exploits the phenomenon commercially by offering discounted rent to prophecies with three-act structures.",
+      "tags": [
+        "metaphysics",
+        "travel",
+        "plot"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Plot Gravity"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "riskLevel": "moderate",
+        "relatedEntities": [
+          "meridian-junction",
+          "finale-galleria"
+        ]
+      },
+      "frontmatter": {
+        "id": "narrative-gravity",
+        "type": "concept",
+        "name": "Narrative Gravity",
+        "status": "canon",
+        "tags": [
+          "metaphysics",
+          "travel",
+          "plot"
+        ],
+        "aliases": [
+          "Plot Gravity"
+        ],
+        "riskLevel": "moderate",
+        "relatedEntities": [
+          "meridian-junction",
+          "finale-galleria"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Narrative-Gravity.md",
+      "canonSourceModifiedMs": 1783742823849
+    },
+    {
+      "id": "reboot-cycle",
+      "kind": "concept",
+      "label": "Reboot Cycle",
+      "preview": "# Reboot Cycle\n\nA Reboot Cycle collapses divergent history into one simplified timeline. Familiar roles return with revised ages, cleaner costumes, and selective amnesia. The discarded versions persist as [[Canon Debt]].\n\nNatural reboots once occurred after catastrophic continuity failure. [[Continuity Studios]] has learned to trigger them deliberately whenever audience research reports excessive lore.",
+      "tags": [
+        "reboot",
+        "timeline",
+        "corporate"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Clean Slate"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "riskLevel": "finale-only",
+        "relatedEntities": [
+          "executive-producer",
+          "continuity-studios",
+          "continuity-engine"
+        ]
+      },
+      "frontmatter": {
+        "id": "reboot-cycle",
+        "type": "concept",
+        "name": "Reboot Cycle",
+        "status": "canon",
+        "tags": [
+          "reboot",
+          "timeline",
+          "corporate"
+        ],
+        "aliases": [
+          "The Clean Slate"
+        ],
+        "riskLevel": "finale-only",
+        "relatedEntities": [
+          "executive-producer",
+          "continuity-studios",
+          "continuity-engine"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts/Reboot-Cycle.md",
+      "canonSourceModifiedMs": 1783742823852
+    },
+    {
+      "id": "bureaucratodon",
+      "kind": "creature",
+      "label": "Bureaucratodon",
+      "preview": "# Bureaucratodon\n\nA Bureaucratodon is a broad, armored creature whose scales resemble filing drawers. It can reject an attack for incomplete documentation or return it to the sender with comments.\n\nThe specimen blocking the ranger office is not hostile; it is waiting for six months of unpaid habitat reimbursement. Resolving its grievance earns the [[Mutual Aid Badge]].",
+      "tags": [
+        "creature",
+        "paperwork",
+        "guardian"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Formback"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "temperament": "officious",
+        "habitat": "collectible-wilds",
+        "abilities": [
+          "paperwork",
+          "continuity"
+        ]
+      },
+      "frontmatter": {
+        "id": "bureaucratodon",
+        "type": "creature",
+        "name": "Bureaucratodon",
+        "status": "canon",
+        "tags": [
+          "creature",
+          "paperwork",
+          "guardian"
+        ],
+        "aliases": [
+          "Formback"
+        ],
+        "temperament": "officious",
+        "habitat": "collectible-wilds",
+        "abilities": [
+          "paperwork",
+          "continuity"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Creatures/Bureaucratodon.md",
+      "canonSourceModifiedMs": 1783742823854
+    },
+    {
+      "id": "continuity-slime",
+      "kind": "creature",
+      "label": "Continuity Slime",
+      "preview": "# Continuity Slime\n\nContinuity Slimes absorb minor contradictions and adopt traits from every version. A slime exposed to three conflicting costume descriptions becomes plaid, armored, sleeveless, and deeply tired.\n\nThe Ministry treats them as maintenance equipment. Freeplot insists they are oral historians with unconventional methods.",
+      "tags": [
+        "creature",
+        "continuity",
+        "cleanup"
+      ],
+      "status": "proposal",
+      "favorite": false,
+      "aliases": [
+        "Retcon Slime"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "temperament": "docile",
+        "habitat": "finale-galleria",
+        "abilities": [
+          "continuity",
+          "mimicry"
+        ]
+      },
+      "frontmatter": {
+        "id": "continuity-slime",
+        "type": "creature",
+        "name": "Continuity Slime",
+        "status": "proposal",
+        "tags": [
+          "creature",
+          "continuity",
+          "cleanup"
+        ],
+        "aliases": [
+          "Retcon Slime"
+        ],
+        "temperament": "docile",
+        "habitat": "finale-galleria",
+        "abilities": [
+          "continuity",
+          "mimicry"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Creatures/Continuity-Slime.md",
+      "canonSourceModifiedMs": 1783742823855
+    },
+    {
+      "id": "fussgriff",
+      "kind": "creature",
+      "label": "Fussgriff",
+      "preview": "# Fussgriff\n\nThe Fussgriff resembles a pocket-sized griffin wearing the expression of an underappreciated stage actor. It repeats nearby dialogue with improved projection and refuses combat unless given top billing.\n\nFussgriffs nest in discarded title cards and can carry one small object or one enormous grudge.",
+      "tags": [
+        "creature",
+        "flying",
+        "theatrical"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Fussgriff"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "temperament": "theatrical",
+        "habitat": "collectible-wilds",
+        "abilities": [
+          "flight",
+          "mimicry"
+        ]
+      },
+      "frontmatter": {
+        "id": "fussgriff",
+        "type": "creature",
+        "name": "Fussgriff",
+        "status": "canon",
+        "tags": [
+          "creature",
+          "flying",
+          "theatrical"
+        ],
+        "aliases": [
+          "The Fussgriff"
+        ],
+        "temperament": "theatrical",
+        "habitat": "collectible-wilds",
+        "abilities": [
+          "flight",
+          "mimicry"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Creatures/Fussgriff.md",
+      "canonSourceModifiedMs": 1783742823857
+    },
+    {
+      "id": "spoilerfinch",
+      "kind": "creature",
+      "label": "Spoilerfinch",
+      "preview": "# Spoilerfinch\n\nSpoilerfinches chirp the final sentence of any conversation they overhear. Most predictions are accurate, but the birds cannot distinguish a definitive ending from a sarcastic draft.\n\n[[Duchess Spoiler]] keeps one as a companion and argues with it professionally.",
+      "tags": [
+        "creature",
+        "prophecy",
+        "bird"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Ending Bird"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "temperament": "chaotic",
+        "habitat": "finale-galleria",
+        "abilities": [
+          "flight",
+          "prophecy"
+        ]
+      },
+      "frontmatter": {
+        "id": "spoilerfinch",
+        "type": "creature",
+        "name": "Spoilerfinch",
+        "status": "canon",
+        "tags": [
+          "creature",
+          "prophecy",
+          "bird"
+        ],
+        "aliases": [
+          "Ending Bird"
+        ],
+        "temperament": "chaotic",
+        "habitat": "finale-galleria",
+        "abilities": [
+          "flight",
+          "prophecy"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Creatures/Spoilerfinch.md",
+      "canonSourceModifiedMs": 1783742823857
+    },
+    {
+      "id": "cape-permit-crisis",
+      "kind": "event",
+      "label": "The Cape Permit Crisis",
+      "preview": "# The Cape Permit Crisis\n\nSeven simultaneous skyline beams caused rolling dramatic blackouts across Cape City. Local 404 negotiated a licensing framework that reduced collateral damage and guaranteed villains access to safer monologue platforms.\n\nThe [[Emergency Cape Permit]] was created as part of the settlement.",
+      "tags": [
+        "history",
+        "superheroes",
+        "civic"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Beam Ban"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "era": "83 AC",
+        "location": "cape-city-permit-hall",
+        "participants": [
+          "paladin-patch",
+          "municipal-heroes-local-404"
+        ]
+      },
+      "frontmatter": {
+        "id": "cape-permit-crisis",
+        "type": "event",
+        "name": "The Cape Permit Crisis",
+        "status": "canon",
+        "tags": [
+          "history",
+          "superheroes",
+          "civic"
+        ],
+        "aliases": [
+          "The Beam Ban"
+        ],
+        "era": "83 AC",
+        "location": "cape-city-permit-hall",
+        "participants": [
+          "paladin-patch",
+          "municipal-heroes-local-404"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Events/Cape-Permit-Crisis.md",
+      "canonSourceModifiedMs": 1783742823858
+    },
+    {
+      "id": "first-merger",
+      "kind": "event",
+      "label": "The First Merger",
+      "preview": "# The First Merger\n\nBudgetary pressure combined seven narrative realities into the Grand Continuity. The operation saved infrastructure costs but placed three dark towers, two chosen villages, and one cheerful creature preserve on the same commuter line.\n\nThe [[Continuity Engine]] was built to negotiate the resulting contradictions.",
+      "tags": [
+        "history",
+        "convergence"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Merger Day"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "era": "Year 0 AC (After Crossover)",
+        "location": "meridian-junction",
+        "participants": [
+          "ministry-narrative-compliance"
+        ]
+      },
+      "frontmatter": {
+        "id": "first-merger",
+        "type": "event",
+        "name": "The First Merger",
+        "status": "canon",
+        "tags": [
+          "history",
+          "convergence"
+        ],
+        "aliases": [
+          "Merger Day"
+        ],
+        "era": "Year 0 AC (After Crossover)",
+        "location": "meridian-junction",
+        "participants": [
+          "ministry-narrative-compliance"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Events/First-Merger.md",
+      "canonSourceModifiedMs": 1783742823858
+    },
+    {
+      "id": "great-prophecy-recall",
+      "kind": "event",
+      "label": "The Great Prophecy Recall",
+      "preview": "# The Great Prophecy Recall\n\nThousands of prophecies were recalled after investigators discovered they all selected the same brooding teenager. [[Nana Null]] led the repair effort and quietly added an opt-out field to destiny records.\n\nThe opt-out field remains technically available but is printed in invisible ink.",
+      "tags": [
+        "history",
+        "prophecy",
+        "safety"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Recall of 47 AC"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "era": "47 AC",
+        "location": "office-prophecy-allocation",
+        "participants": [
+          "nana-null",
+          "ministry-narrative-compliance"
+        ]
+      },
+      "frontmatter": {
+        "id": "great-prophecy-recall",
+        "type": "event",
+        "name": "The Great Prophecy Recall",
+        "status": "canon",
+        "tags": [
+          "history",
+          "prophecy",
+          "safety"
+        ],
+        "aliases": [
+          "Recall of 47 AC"
+        ],
+        "era": "47 AC",
+        "location": "office-prophecy-allocation",
+        "participants": [
+          "nana-null",
+          "ministry-narrative-compliance"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Events/Great-Prophecy-Recall.md",
+      "canonSourceModifiedMs": 1783742823858
+    },
+    {
+      "id": "pocket-beast-strike",
+      "kind": "event",
+      "label": "The Pocket Beast Strike",
+      "preview": "# The Pocket Beast Strike\n\nCreatures across the Wilds refused random encounters until trainers recognized rest days, consent, and shared merchandising revenue. The strike ended peacefully when Sprig-Nine evolved into a labor negotiator during live arbitration.\n\nThe resulting agreement created the [[Mutual Aid Badge]].",
+      "tags": [
+        "history",
+        "labor",
+        "creatures"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Great Refusal"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "era": "71 AC",
+        "location": "collectible-wilds",
+        "participants": [
+          "sprig-nine",
+          "pocket-colossi-union"
+        ]
+      },
+      "frontmatter": {
+        "id": "pocket-beast-strike",
+        "type": "event",
+        "name": "The Pocket Beast Strike",
+        "status": "canon",
+        "tags": [
+          "history",
+          "labor",
+          "creatures"
+        ],
+        "aliases": [
+          "The Great Refusal"
+        ],
+        "era": "71 AC",
+        "location": "collectible-wilds",
+        "participants": [
+          "sprig-nine",
+          "pocket-colossi-union"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Events/Pocket-Beast-Strike.md",
+      "canonSourceModifiedMs": 1783742823859
     },
     {
       "id": "present-convergence",
       "kind": "event",
       "label": "The Present Convergence",
+      "preview": "# The Present Convergence\n\nThe [[Continuity Engine]] begins collapsing all genre regions into a single market-tested timeline. Every prophecy assigns Tess Quill as temporary chosen one, and the Executive Producer schedules a reboot for midnight.\n\nThis is the historical event dramatized by [[The Last Acceptable Reboot]]. Its final canonical outcome is intentionally unresolved so the PathBranching endings can demonstrate alternate conclusions.",
+      "tags": [
+        "current",
+        "crisis",
+        "finale"
+      ],
       "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Last Acceptable Reboot"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "era": "100 AC",
+        "location": "finale-galleria",
+        "participants": [
+          "tess-quill",
+          "executive-producer",
+          "duchess-spoiler"
+        ]
+      },
+      "frontmatter": {
+        "id": "present-convergence",
+        "type": "event",
+        "name": "The Present Convergence",
+        "status": "canon",
+        "tags": [
+          "current",
+          "crisis",
+          "finale"
+        ],
+        "aliases": [
+          "The Last Acceptable Reboot"
+        ],
+        "era": "100 AC",
+        "location": "finale-galleria",
+        "participants": [
+          "tess-quill",
+          "executive-producer",
+          "duchess-spoiler"
+        ]
+      },
+      "folderDescription": false,
       "source": "worldnotion",
-      "canonSourcePath": "Events/Present-Convergence.md"
+      "canonSourcePath": "Events/Present-Convergence.md",
+      "canonSourceModifiedMs": 1783742823859
+    },
+    {
+      "id": "fantasy-setting",
+      "kind": "world",
+      "label": "The Generic Fantasy Realm",
+      "preview": "# The Generic Fantasy Realm\n\nUna demo de fantasía genérica para probar personajes, lugares, organizaciones, magia, quests y escenas usando la plantilla Worldbuilding por defecto.",
+      "tags": [
+        "fantasy",
+        "template-demo"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "childrenIds": [],
+      "properties": {
+        "loreLevel": "canon"
+      },
+      "frontmatter": {
+        "id": "fantasy-setting",
+        "type": "world",
+        "name": "The Generic Fantasy Realm",
+        "status": "canon",
+        "tags": [
+          "fantasy",
+          "template-demo"
+        ],
+        "aliases": [],
+        "loreLevel": "canon"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Fantasy-Setting.md",
+      "canonSourceModifiedMs": 1784167943604
+    },
+    {
+      "id": "continuity-engine",
+      "kind": "item",
+      "label": "Continuity Engine",
+      "preview": "# Continuity Engine\n\nThe Engine is a city-sized machine beneath [[Finale Galleria]]. It does not decide which story is true. Its original purpose was to let contradictory stories coexist while preserving enough shared facts for people to meet each other.\n\nThe Ministry gradually converted negotiation into enforcement. [[Continuity Studios]] then added a reboot control disguised as a user-experience improvement.\n\n## Four-key interface\n\nThe Engine recognizes four genre credentials: the [[Stellar Plot Coupon]], [[Provisional Wand License]], [[Mutual Aid Badge]], and [[Emergency Cape Permit]]. Together they grant access to the final continuity console.",
+      "tags": [
+        "artifact",
+        "infrastructure",
+        "finale"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Engine",
+        "Canon Loom"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "rarity": "legendary",
+        "owner": "ministry-narrative-compliance",
+        "relatedConcepts": [
+          "genre-bleed",
+          "narrative-gravity",
+          "reboot-cycle"
+        ]
+      },
+      "frontmatter": {
+        "id": "continuity-engine",
+        "type": "item",
+        "name": "Continuity Engine",
+        "status": "canon",
+        "tags": [
+          "artifact",
+          "infrastructure",
+          "finale"
+        ],
+        "aliases": [
+          "The Engine",
+          "Canon Loom"
+        ],
+        "rarity": "legendary",
+        "owner": "ministry-narrative-compliance",
+        "relatedConcepts": [
+          "genre-bleed",
+          "narrative-gravity",
+          "reboot-cycle"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Continuity-Engine.md",
+      "canonSourceModifiedMs": 1783742823859
+    },
+    {
+      "id": "emergency-cape-permit",
+      "kind": "item",
+      "label": "Emergency Cape Permit",
+      "preview": "# Emergency Cape Permit\n\nThe Permit authorizes one person to commandeer dramatic lighting, rooftop access, and a safe section of skyline during a declared continuity emergency.\n\nIts reverse side lists prohibited actions, including anonymous property damage, unscheduled origin stories, and beams whose color has not been cleared with air traffic control.",
+      "tags": [
+        "superhero",
+        "credential",
+        "key"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Cape Permit",
+        "Form Hero-404"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "rarity": "regulated",
+        "owner": "municipal-heroes-local-404",
+        "relatedConcepts": [
+          "narrative-gravity"
+        ]
+      },
+      "frontmatter": {
+        "id": "emergency-cape-permit",
+        "type": "item",
+        "name": "Emergency Cape Permit",
+        "status": "canon",
+        "tags": [
+          "superhero",
+          "credential",
+          "key"
+        ],
+        "aliases": [
+          "Cape Permit",
+          "Form Hero-404"
+        ],
+        "rarity": "regulated",
+        "owner": "municipal-heroes-local-404",
+        "relatedConcepts": [
+          "narrative-gravity"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Emergency-Cape-Permit.md",
+      "canonSourceModifiedMs": 1783742823860
+    },
+    {
+      "id": "mutual-aid-badge",
+      "kind": "item",
+      "label": "Mutual Aid Badge",
+      "preview": "# Mutual Aid Badge\n\nThe Badge certifies that its holder solved a creature conflict without forced capture, elemental exploitation, or an inspirational speech delivered before listening.\n\nIt is also a key to the [[Continuity Engine]], whose original designers considered consent a foundational compatibility protocol.",
+      "tags": [
+        "creature",
+        "credential",
+        "key"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Union Badge",
+        "Consent Emblem"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "rarity": "rare",
+        "owner": "pocket-colossi-union",
+        "relatedConcepts": [
+          "canon-debt"
+        ]
+      },
+      "frontmatter": {
+        "id": "mutual-aid-badge",
+        "type": "item",
+        "name": "Mutual Aid Badge",
+        "status": "canon",
+        "tags": [
+          "creature",
+          "credential",
+          "key"
+        ],
+        "aliases": [
+          "Union Badge",
+          "Consent Emblem"
+        ],
+        "rarity": "rare",
+        "owner": "pocket-colossi-union",
+        "relatedConcepts": [
+          "canon-debt"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Mutual-Aid-Badge.md",
+      "canonSourceModifiedMs": 1783742823860
+    },
+    {
+      "id": "provisional-wand-license",
+      "kind": "item",
+      "label": "Provisional Wand License",
+      "preview": "# Provisional Wand License\n\nThis laminated credential permits the holder to perform one plot-relevant spell under faculty supervision. It glows when used responsibly and emits a disappointed cough when waved theatrically.\n\n[[Professor Beige]] awards it after Tess solves an exam by questioning the premise rather than choosing one of the four suspiciously faction-coded answers.",
+      "tags": [
+        "magic",
+        "credential",
+        "key"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Wand License",
+        "Form Thaum-7"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "rarity": "regulated",
+        "owner": "licensed-wizard-faculty",
+        "relatedConcepts": [
+          "chosen-one-allocation"
+        ]
+      },
+      "frontmatter": {
+        "id": "provisional-wand-license",
+        "type": "item",
+        "name": "Provisional Wand License",
+        "status": "canon",
+        "tags": [
+          "magic",
+          "credential",
+          "key"
+        ],
+        "aliases": [
+          "Wand License",
+          "Form Thaum-7"
+        ],
+        "rarity": "regulated",
+        "owner": "licensed-wizard-faculty",
+        "relatedConcepts": [
+          "chosen-one-allocation"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Provisional-Wand-License.md",
+      "canonSourceModifiedMs": 1783742823860
+    },
+    {
+      "id": "red-stamp-canon",
+      "kind": "item",
+      "label": "Red Stamp of Canon",
+      "preview": "# Red Stamp of Canon\n\nThe Stamp makes one declarative sentence true across the Grand Continuity. It cannot resolve ambiguity; it merely relocates the ambiguity into footnotes, spin-offs, and increasingly tense family dinners.\n\nTess is issued the Stamp when assigned to audit the [[Continuity Engine]]. Using it enables the Patched Canon ending, while refusing it strengthens Freeplot's argument that no person should own universal truth.",
+      "tags": [
+        "ministry",
+        "tool",
+        "dangerous"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Red Stamp",
+        "Canon Stamp"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "rarity": "legendary",
+        "owner": "tess-quill",
+        "relatedConcepts": [
+          "canon-debt",
+          "chosen-one-allocation"
+        ]
+      },
+      "frontmatter": {
+        "id": "red-stamp-canon",
+        "type": "item",
+        "name": "Red Stamp of Canon",
+        "status": "canon",
+        "tags": [
+          "ministry",
+          "tool",
+          "dangerous"
+        ],
+        "aliases": [
+          "The Red Stamp",
+          "Canon Stamp"
+        ],
+        "rarity": "legendary",
+        "owner": "tess-quill",
+        "relatedConcepts": [
+          "canon-debt",
+          "chosen-one-allocation"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Red-Stamp-of-Canon.md",
+      "canonSourceModifiedMs": 1783742823860
+    },
+    {
+      "id": "stellar-plot-coupon",
+      "kind": "item",
+      "label": "Stellar Plot Coupon",
+      "preview": "# Stellar Plot Coupon\n\nA holographic voucher redeemable for one maneuver that ignores fuel, distance, and previously established ship capabilities. The fine print requires an emotional confession during acceleration.\n\nThe coupon is kept in [[Orbital Cantina Nine]] until Tess and [[Captain Sol Ledger]] prove their heist is advancing character rather than merely filling runtime.",
+      "tags": [
+        "space-opera",
+        "credential",
+        "key"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Plot Coupon",
+        "Impossible Maneuver Voucher"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "rarity": "narratively-convenient",
+        "owner": "captain-sol-ledger",
+        "relatedConcepts": [
+          "narrative-gravity"
+        ]
+      },
+      "frontmatter": {
+        "id": "stellar-plot-coupon",
+        "type": "item",
+        "name": "Stellar Plot Coupon",
+        "status": "canon",
+        "tags": [
+          "space-opera",
+          "credential",
+          "key"
+        ],
+        "aliases": [
+          "Plot Coupon",
+          "Impossible Maneuver Voucher"
+        ],
+        "rarity": "narratively-convenient",
+        "owner": "captain-sol-ledger",
+        "relatedConcepts": [
+          "narrative-gravity"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Items/Stellar-Plot-Coupon.md",
+      "canonSourceModifiedMs": 1783742823862
+    },
+    {
+      "id": "cape-city-permit-hall",
+      "kind": "location",
+      "label": "Cape City Permit Hall",
+      "preview": "# Cape City Permit Hall\n\nPermit Hall is both city hall and an emergency-response headquarters. Its roof opens for dramatic departures, while its basement contains the Department of Secret Identities and a very public lost-and-found.\n\nTess must earn the [[Emergency Cape Permit]] by resolving a crisis without causing a third-act skyline beam. [[Paladin Patch]] considers this the hardest test in modern heroism.",
+      "tags": [
+        "superhero",
+        "civic",
+        "permit"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Hall 404",
+        "Hero Licensing"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Cape City",
+        "governingOrganization": "municipal-heroes-local-404"
+      },
+      "frontmatter": {
+        "id": "cape-city-permit-hall",
+        "type": "location",
+        "name": "Cape City Permit Hall",
+        "status": "canon",
+        "tags": [
+          "superhero",
+          "civic",
+          "permit"
+        ],
+        "aliases": [
+          "Hall 404",
+          "Hero Licensing"
+        ],
+        "region": "Cape City",
+        "governingOrganization": "municipal-heroes-local-404"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Cape-City-Permit-Hall.md",
+      "canonSourceModifiedMs": 1783742823862
+    },
+    {
+      "id": "collectible-wilds",
+      "kind": "location",
+      "label": "Collectible Wilds",
+      "preview": "# Collectible Wilds\n\nThe Wilds consist of grass routes, elemental caves, improbably specialized habitats, and health centers placed at legally mandated intervals. Creature encounters are voluntary under the [[Pocket Colossi Union]] agreement.\n\nVisitors seeking the [[Mutual Aid Badge]] must help settle a dispute between a [[Bureaucratodon]] and the ranger office rather than defeat a conveniently ranked gym leader.",
+      "tags": [
+        "wilderness",
+        "creatures",
+        "union"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Wilds",
+        "Route Everywhere"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Catalogued Hinterlands",
+        "governingOrganization": "pocket-colossi-union"
+      },
+      "frontmatter": {
+        "id": "collectible-wilds",
+        "type": "location",
+        "name": "Collectible Wilds",
+        "status": "canon",
+        "tags": [
+          "wilderness",
+          "creatures",
+          "union"
+        ],
+        "aliases": [
+          "The Wilds",
+          "Route Everywhere"
+        ],
+        "region": "Catalogued Hinterlands",
+        "governingOrganization": "pocket-colossi-union"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Collectible-Wilds.md",
+      "canonSourceModifiedMs": 1783742823863
+    },
+    {
+      "id": "finale-galleria",
+      "kind": "location",
+      "label": "Finale Galleria",
+      "preview": "# Finale Galleria\n\nFinale Galleria is a shopping complex built around the exposed chamber of the [[Continuity Engine]]. Every corridor converges on the central atrium because [[Narrative Gravity]] has a retail partnership.\n\nThe mall contains abandoned sets from previous timelines, a food court that serves symbolic meals, and the flagship offices of [[Continuity Studios]]. During the [[Present Convergence]], its skylight becomes the mandatory beam through which the reboot signal will fire.",
+      "tags": [
+        "finale",
+        "mall",
+        "studio"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Galleria",
+        "Third-Act Mall"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Meridian Terminus",
+        "governingOrganization": "continuity-studios"
+      },
+      "frontmatter": {
+        "id": "finale-galleria",
+        "type": "location",
+        "name": "Finale Galleria",
+        "status": "canon",
+        "tags": [
+          "finale",
+          "mall",
+          "studio"
+        ],
+        "aliases": [
+          "The Galleria",
+          "Third-Act Mall"
+        ],
+        "region": "Meridian Terminus",
+        "governingOrganization": "continuity-studios"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Finale-Galleria.md",
+      "canonSourceModifiedMs": 1783742823863
+    },
+    {
+      "id": "hexford-academy-annex",
+      "kind": "location",
+      "label": "Hexford Academy Annex",
+      "preview": "# Hexford Academy Annex\n\nHexford is an ancient school of magic operating from a modern office park because the original castle failed accessibility inspection. The moving staircases were replaced with elevators that still enjoy riddles.\n\nStudents sort themselves by preferred citation style. Professor Beige guards the [[Provisional Wand License]] in the Department of Applied Foreshadowing, where every exam question has already been foretold but the grading rubric remains mysterious.",
+      "tags": [
+        "academy",
+        "magic",
+        "satellite-campus"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Hexford",
+        "The Annex"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Scholastic Marches",
+        "governingOrganization": "licensed-wizard-faculty"
+      },
+      "frontmatter": {
+        "id": "hexford-academy-annex",
+        "type": "location",
+        "name": "Hexford Academy Annex",
+        "status": "canon",
+        "tags": [
+          "academy",
+          "magic",
+          "satellite-campus"
+        ],
+        "aliases": [
+          "Hexford",
+          "The Annex"
+        ],
+        "region": "Scholastic Marches",
+        "governingOrganization": "licensed-wizard-faculty"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Hexford-Academy-Annex.md",
+      "canonSourceModifiedMs": 1783742823863
+    },
+    {
+      "id": "meridian-junction",
+      "kind": "location",
+      "label": "Meridian Junction",
+      "preview": "# Meridian Junction\n\nMeridian Junction is a vertical city built around the rail lines of [[Narrative Gravity]]. Trains arrive from enchanted kingdoms, orbital republics, creature preserves, wasteland suburbs, and Cape City, often on the same platform.\n\nThe skyline changes with audience expectations. Towers become castles during fantasy weather, starships during space-opera weather, and suspiciously affordable apartments during romantic-comedy fronts.\n\n## Districts\n\n- The Ministry Stack, containing [[Office of Prophecy Allocation]].\n- Union Platform, where the [[Freeplot Cooperative]] distributes unauthorized maps.\n- The Galleria Line, terminating at [[Finale Galleria]].",
+      "tags": [
+        "city",
+        "crossover",
+        "transit"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Junction",
+        "Center of Everything This Week"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Central Continuity",
+        "governingOrganization": "ministry-narrative-compliance"
+      },
+      "frontmatter": {
+        "id": "meridian-junction",
+        "type": "location",
+        "name": "Meridian Junction",
+        "status": "canon",
+        "tags": [
+          "city",
+          "crossover",
+          "transit"
+        ],
+        "aliases": [
+          "The Junction",
+          "Center of Everything This Week"
+        ],
+        "region": "Central Continuity",
+        "governingOrganization": "ministry-narrative-compliance"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Meridian-Junction.md",
+      "canonSourceModifiedMs": 1783742823863
+    },
+    {
+      "id": "office-prophecy-allocation",
+      "kind": "location",
+      "label": "Office of Prophecy Allocation",
+      "preview": "# Office of Prophecy Allocation\n\nThe Office assigns destinies, processes chosen-one appeals, and maintains a waiting list for dark lords seeking age-appropriate nemeses. Its lobby number display has shown **NOW SERVING: 3** for six centuries.\n\nTess begins [[The Last Acceptable Reboot]] here after every prophecy printer produces her employee number. A mislabeled staff corridor hides the first clue to Nana Null's ordinary emergency exit.",
+      "tags": [
+        "office",
+        "prophecy",
+        "ministry"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "OPA",
+        "Destiny Records"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Meridian Junction",
+        "governingOrganization": "ministry-narrative-compliance"
+      },
+      "frontmatter": {
+        "id": "office-prophecy-allocation",
+        "type": "location",
+        "name": "Office of Prophecy Allocation",
+        "status": "canon",
+        "tags": [
+          "office",
+          "prophecy",
+          "ministry"
+        ],
+        "aliases": [
+          "OPA",
+          "Destiny Records"
+        ],
+        "region": "Meridian Junction",
+        "governingOrganization": "ministry-narrative-compliance"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Office-of-Prophecy-Allocation.md",
+      "canonSourceModifiedMs": 1783742823866
+    },
+    {
+      "id": "orbital-cantina-nine",
+      "kind": "location",
+      "label": "Orbital Cantina Nine",
+      "preview": "# Orbital Cantina Nine\n\nEvery booth in Cantina Nine hosts a different clandestine meeting. The house band knows only one suspicious melody but plays it in seventeen alien time signatures.\n\nThe [[Stellar Plot Coupon]] is stored in the manager's safe and may be redeemed for one impossible space maneuver. [[Captain Sol Ledger]] has a plan involving forged invoices, a ceremonial moon, and no fewer than two ventilation shafts.",
+      "tags": [
+        "spaceport",
+        "cantina",
+        "heist"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Cantina Nine",
+        "The Ninth Bar"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "region": "Convenient Outer Rim",
+        "governingOrganization": "continuity-studios"
+      },
+      "frontmatter": {
+        "id": "orbital-cantina-nine",
+        "type": "location",
+        "name": "Orbital Cantina Nine",
+        "status": "canon",
+        "tags": [
+          "spaceport",
+          "cantina",
+          "heist"
+        ],
+        "aliases": [
+          "Cantina Nine",
+          "The Ninth Bar"
+        ],
+        "region": "Convenient Outer Rim",
+        "governingOrganization": "continuity-studios"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Locations/Orbital-Cantina-Nine.md",
+      "canonSourceModifiedMs": 1783742823866
+    },
+    {
+      "id": "continuity-studios",
+      "kind": "organization",
+      "label": "Continuity Studios",
+      "preview": "# Continuity Studios\n\nContinuity Studios finances heroic infrastructure in exchange for adaptation rights, naming rights, and the right to replace any confusing citizen with a younger interpretation. Its research division turned the [[Reboot Cycle]] from a cosmic accident into a quarterly strategy.\n\nThe Studio's pitch is seductive: one clean timeline, universal accessibility, spectacular visuals, and no homework. The cost is every inconvenient memory that made the world specific.\n\n## Story route\n\nCooperating with the Studio raises spectacle and unlocks **Prestige Reboot** or **Executive Promotion**.",
+      "tags": [
+        "corporation",
+        "media",
+        "antagonist"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Studio",
+        "Continuity Global"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "headquarters": "finale-galleria",
+        "ideology": "Every universe deserves a clear brand promise and a recurring revenue model.",
+        "relatedCharacters": [
+          "executive-producer",
+          "duchess-spoiler"
+        ]
+      },
+      "frontmatter": {
+        "id": "continuity-studios",
+        "type": "organization",
+        "name": "Continuity Studios",
+        "status": "canon",
+        "tags": [
+          "corporation",
+          "media",
+          "antagonist"
+        ],
+        "aliases": [
+          "The Studio",
+          "Continuity Global"
+        ],
+        "headquarters": "finale-galleria",
+        "ideology": "Every universe deserves a clear brand promise and a recurring revenue model.",
+        "relatedCharacters": [
+          "executive-producer",
+          "duchess-spoiler"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Continuity-Studios.md",
+      "canonSourceModifiedMs": 1783742823867
+    },
+    {
+      "id": "freeplot-cooperative",
+      "kind": "organization",
+      "label": "Freeplot Cooperative",
+      "preview": "# Freeplot Cooperative\n\nFreeplot is a decentralized network of side characters, cancelled villains, background citizens, and creatures who survived their original narrative functions. They repair abandoned subplots and publish continuity patches under permissive licenses.\n\nThe Cooperative wants to open the [[Continuity Engine]] so every community can maintain its own branch. Their plan is generous but risks turning shared history into incompatible local forks.\n\n## Story route\n\nWorking with Freeplot builds solidarity and unlocks the **Stories in Common** ending.",
+      "tags": [
+        "rebels",
+        "mutual-aid",
+        "open-stories"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Freeplot",
+        "The Cooperative"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "headquarters": "meridian-junction",
+        "ideology": "Stories should be maintained by their participants, not owned by a central authority.",
+        "relatedCharacters": [
+          "captain-sol-ledger",
+          "nana-null",
+          "sprig-nine"
+        ]
+      },
+      "frontmatter": {
+        "id": "freeplot-cooperative",
+        "type": "organization",
+        "name": "Freeplot Cooperative",
+        "status": "canon",
+        "tags": [
+          "rebels",
+          "mutual-aid",
+          "open-stories"
+        ],
+        "aliases": [
+          "Freeplot",
+          "The Cooperative"
+        ],
+        "headquarters": "meridian-junction",
+        "ideology": "Stories should be maintained by their participants, not owned by a central authority.",
+        "relatedCharacters": [
+          "captain-sol-ledger",
+          "nana-null",
+          "sprig-nine"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Freeplot-Cooperative.md",
+      "canonSourceModifiedMs": 1783742823867
+    },
+    {
+      "id": "licensed-wizard-faculty",
+      "kind": "organization",
+      "label": "Licensed Wizard Faculty",
+      "preview": "# Licensed Wizard Faculty\n\nThe Faculty accredits spell programs, regulates dramatic robes, and investigates plagiarism between ancient prophecies. Its members defend academic freedom while requiring seventeen signatures to summon a familiar.\n\nThe [[Provisional Wand License]] is their contribution to the four credentials needed to operate the [[Continuity Engine]].",
+      "tags": [
+        "magic",
+        "education",
+        "accreditation"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "LWF",
+        "The Faculty"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "headquarters": "hexford-academy-annex",
+        "ideology": "Magic without peer review is merely special effects.",
+        "relatedCharacters": [
+          "professor-beige"
+        ]
+      },
+      "frontmatter": {
+        "id": "licensed-wizard-faculty",
+        "type": "organization",
+        "name": "Licensed Wizard Faculty",
+        "status": "canon",
+        "tags": [
+          "magic",
+          "education",
+          "accreditation"
+        ],
+        "aliases": [
+          "LWF",
+          "The Faculty"
+        ],
+        "headquarters": "hexford-academy-annex",
+        "ideology": "Magic without peer review is merely special effects.",
+        "relatedCharacters": [
+          "professor-beige"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Licensed-Wizard-Faculty.md",
+      "canonSourceModifiedMs": 1783742823867
+    },
+    {
+      "id": "ministry-narrative-compliance",
+      "kind": "organization",
+      "label": "Ministry of Narrative Compliance",
+      "preview": "# Ministry of Narrative Compliance\n\nThe Ministry maintains the official timeline, registers chosen ones, and issues continuity citations to paradoxes parked in loading zones. It is slow, sincere, and terrified that one unregulated side quest could collapse public transportation.\n\nMost employees want stability rather than power. The institution's failure is believing that a single approved story can represent everyone who lives inside it.\n\n## Story route\n\nSupporting the Ministry raises compliance and unlocks the **Patched Canon** ending, provided Tess gathers all four genre credentials.",
+      "tags": [
+        "government",
+        "canon",
+        "bureaucracy"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "The Ministry",
+        "MNC"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "headquarters": "office-prophecy-allocation",
+        "ideology": "A shared canon requires rules, forms, and properly licensed destinies.",
+        "relatedCharacters": [
+          "tess-quill"
+        ]
+      },
+      "frontmatter": {
+        "id": "ministry-narrative-compliance",
+        "type": "organization",
+        "name": "Ministry of Narrative Compliance",
+        "status": "canon",
+        "tags": [
+          "government",
+          "canon",
+          "bureaucracy"
+        ],
+        "aliases": [
+          "The Ministry",
+          "MNC"
+        ],
+        "headquarters": "office-prophecy-allocation",
+        "ideology": "A shared canon requires rules, forms, and properly licensed destinies.",
+        "relatedCharacters": [
+          "tess-quill"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Ministry-of-Narrative-Compliance.md",
+      "canonSourceModifiedMs": 1783742823868
+    },
+    {
+      "id": "municipal-heroes-local-404",
+      "kind": "organization",
+      "label": "Municipal Heroes Local 404",
+      "preview": "# Municipal Heroes Local 404\n\nLocal 404 organizes caped responders, dispatchers, sidekicks, bridge engineers, and citizens who point toward danger. Members receive health coverage, identity protection, and one dramatic rooftop conversation per quarter.\n\nThe Local controls the [[Emergency Cape Permit]] and refuses to issue it for battles whose primary purpose is improving a villain's skyline silhouette.",
+      "tags": [
+        "superheroes",
+        "union",
+        "public-service"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "Local 404",
+        "Municipal Heroes"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "headquarters": "cape-city-permit-hall",
+        "ideology": "Heroism is public service, not private branding.",
+        "relatedCharacters": [
+          "paladin-patch"
+        ]
+      },
+      "frontmatter": {
+        "id": "municipal-heroes-local-404",
+        "type": "organization",
+        "name": "Municipal Heroes Local 404",
+        "status": "canon",
+        "tags": [
+          "superheroes",
+          "union",
+          "public-service"
+        ],
+        "aliases": [
+          "Local 404",
+          "Municipal Heroes"
+        ],
+        "headquarters": "cape-city-permit-hall",
+        "ideology": "Heroism is public service, not private branding.",
+        "relatedCharacters": [
+          "paladin-patch"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Municipal-Heroes-Local-404.md",
+      "canonSourceModifiedMs": 1783742823868
+    },
+    {
+      "id": "pocket-colossi-union",
+      "kind": "organization",
+      "label": "Pocket Colossi Union",
+      "preview": "# Pocket Colossi Union\n\nThe Union represents creatures previously expected to fight strangers, live in tiny containers, and communicate through marketable syllables. Its contract recognizes evolution as a personal choice and friendship as a relationship rather than a combat bonus.\n\nThe Union awards the [[Mutual Aid Badge]] to travelers who resolve conflict without forced capture.",
+      "tags": [
+        "creatures",
+        "union",
+        "rights"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [
+        "PCU",
+        "Local Tiny-Giant"
+      ],
+      "childrenIds": [],
+      "properties": {
+        "headquarters": "collectible-wilds",
+        "ideology": "Companionship requires consent, rest periods, and profit participation.",
+        "relatedCharacters": [
+          "sprig-nine"
+        ]
+      },
+      "frontmatter": {
+        "id": "pocket-colossi-union",
+        "type": "organization",
+        "name": "Pocket Colossi Union",
+        "status": "canon",
+        "tags": [
+          "creatures",
+          "union",
+          "rights"
+        ],
+        "aliases": [
+          "PCU",
+          "Local Tiny-Giant"
+        ],
+        "headquarters": "collectible-wilds",
+        "ideology": "Companionship requires consent, rest periods, and profit participation.",
+        "relatedCharacters": [
+          "sprig-nine"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations/Pocket-Colossi-Union.md",
+      "canonSourceModifiedMs": 1783742823868
+    },
+    {
+      "id": "scene-cape-crisis",
+      "kind": "scene",
+      "label": "Cape Permit Test",
+      "preview": "# Cape Permit Test\n\n[[Paladin Patch]] asks Tess to stop an unauthorized skyline beam without punching its operator through a landmark. The solution requires evacuation, labor coordination, and reading the machine's cancellation policy.\n\nLocal 404 awards the [[Emergency Cape Permit]].",
+      "tags": [
+        "superhero",
+        "civic",
+        "credential"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "cape-city-permit-hall",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-cape-crisis",
+        "type": "scene",
+        "name": "Cape Permit Test",
+        "status": "canon",
+        "tags": [
+          "superhero",
+          "civic",
+          "credential"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "cape-city-permit-hall",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Cape-Permit-Test.md",
+      "canonSourceModifiedMs": 1783742823871
+    },
+    {
+      "id": "scene-continuity-choice",
+      "kind": "scene",
+      "label": "The Continuity Choice",
+      "preview": "# The Continuity Choice\n\nAt the [[Continuity Engine]] console, Tess selects what kind of ending the world deserves. Route variables and earlier discoveries unlock different responses, but the Eternal Sequel remains available whenever a decisive conclusion feels too responsible.\n\nThe secret Ordinary Lunch ending appears only if Tess noticed the break-room exit during [[Prophecy Overflow]].",
+      "tags": [
+        "finale",
+        "endings",
+        "choice"
+      ],
+      "status": "proposal",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "finale-galleria",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-continuity-choice",
+        "type": "scene",
+        "name": "The Continuity Choice",
+        "status": "proposal",
+        "tags": [
+          "finale",
+          "endings",
+          "choice"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "finale-galleria",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Continuity-Choice.md",
+      "canonSourceModifiedMs": 1783742823872
+    },
+    {
+      "id": "scene-creature-arbitration",
+      "kind": "scene",
+      "label": "Creature Arbitration",
+      "preview": "# Creature Arbitration\n\nA [[Bureaucratodon]] blocks the ranger office over unpaid habitat reimbursement. Tess and [[Sprig-Nine]] can listen, mediate, or attempt a traditional battle that immediately fails an ethics review.\n\nA fair settlement earns the [[Mutual Aid Badge]].",
+      "tags": [
+        "creatures",
+        "union",
+        "credential"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "collectible-wilds",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-creature-arbitration",
+        "type": "scene",
+        "name": "Creature Arbitration",
+        "status": "canon",
+        "tags": [
+          "creatures",
+          "union",
+          "credential"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "collectible-wilds",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Creature-Arbitration.md",
+      "canonSourceModifiedMs": 1783742823873
+    },
+    {
+      "id": "scene-final-galleria",
+      "kind": "scene",
+      "label": "Finale Galleria Infiltration",
+      "preview": "# Finale Galleria Infiltration\n\nWith four credentials, Tess enters [[Finale Galleria]]. [[Duchess Spoiler]] reveals that the Executive Producer has already filmed several endings and offers Tess the chance to improvise one they cannot predict.",
+      "tags": [
+        "finale",
+        "confrontation"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "finale-galleria",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-final-galleria",
+        "type": "scene",
+        "name": "Finale Galleria Infiltration",
+        "status": "canon",
+        "tags": [
+          "finale",
+          "confrontation"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "finale-galleria",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Finale-Galleria-Infiltration.md",
+      "canonSourceModifiedMs": 1783742823873
+    },
+    {
+      "id": "scene-orbital-coupon",
+      "kind": "scene",
+      "label": "Orbital Coupon Heist",
+      "preview": "# Orbital Coupon Heist\n\n[[Captain Sol Ledger]] and Tess infiltrate [[Orbital Cantina Nine]] to recover the [[Stellar Plot Coupon]]. The plan can succeed through forged invoices, impossible piloting, or an honest conversation with the manager about unpaid narrative labor.",
+      "tags": [
+        "space-opera",
+        "heist",
+        "credential"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "orbital-cantina-nine",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-orbital-coupon",
+        "type": "scene",
+        "name": "Orbital Coupon Heist",
+        "status": "canon",
+        "tags": [
+          "space-opera",
+          "heist",
+          "credential"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "orbital-cantina-nine",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Orbital-Coupon-Heist.md",
+      "canonSourceModifiedMs": 1783742823873
+    },
+    {
+      "id": "scene-prophecy-overflow",
+      "kind": "scene",
+      "label": "Prophecy Overflow",
+      "preview": "# Prophecy Overflow\n\nEvery printer in the [[Office of Prophecy Allocation]] produces Tess's employee number. She follows a corridor labeled **NOT A SECRET PASSAGE**, notices the break-room emergency exit, and reaches the audit chamber where [[Nana Null]] explains the crisis.\n\n## Choice pressure\n\nTess may accept the [[Red Stamp of Canon]], question the Ministry's authority, or ask who profits from the reboot.",
+      "tags": [
+        "opening",
+        "office",
+        "prophecy"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "office-prophecy-allocation",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-prophecy-overflow",
+        "type": "scene",
+        "name": "Prophecy Overflow",
+        "status": "canon",
+        "tags": [
+          "opening",
+          "office",
+          "prophecy"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "office-prophecy-allocation",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Prophecy-Overflow.md",
+      "canonSourceModifiedMs": 1783742823875
+    },
+    {
+      "id": "scene-route-selection",
+      "kind": "scene",
+      "label": "Route Selection",
+      "preview": "# Route Selection\n\nThree representatives present incompatible plans in the same transit lounge. The Ministry wants restoration, Freeplot wants distributed stewardship, and the Studio wants a spectacular reboot.\n\nThe routes reconverge because all three need the same four credentials, but each alliance changes Tess's available final arguments.",
+      "tags": [
+        "alliance",
+        "branch"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "meridian-junction",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-route-selection",
+        "type": "scene",
+        "name": "Route Selection",
+        "status": "canon",
+        "tags": [
+          "alliance",
+          "branch"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "meridian-junction",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Route-Selection.md",
+      "canonSourceModifiedMs": 1783742823875
+    },
+    {
+      "id": "scene-wand-exam",
+      "kind": "scene",
+      "label": "Wand License Exam",
+      "preview": "# Wand License Exam\n\nAt [[Hexford Academy Annex]], [[Professor Beige]] administers a foretold exam. Tess earns the [[Provisional Wand License]] by identifying the hidden fifth answer: reject the assumption that power proves moral authority.",
+      "tags": [
+        "magic-school",
+        "exam",
+        "credential"
+      ],
+      "status": "canon",
+      "favorite": false,
+      "aliases": [],
+      "parentId": "last-acceptable-reboot",
+      "childrenIds": [],
+      "properties": {
+        "location": "hexford-academy-annex",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "frontmatter": {
+        "id": "scene-wand-exam",
+        "type": "scene",
+        "name": "Wand License Exam",
+        "status": "canon",
+        "tags": [
+          "magic-school",
+          "exam",
+          "credential"
+        ],
+        "aliases": [],
+        "parentId": "last-acceptable-reboot",
+        "location": "hexford-academy-annex",
+        "viewpointCharacter": "tess-quill",
+        "draftStatus": "revised"
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/Scenes/Wand-License-Exam.md",
+      "canonSourceModifiedMs": 1783742823875
+    },
+    {
+      "id": "last-acceptable-reboot",
+      "kind": "story",
+      "label": "The Last Acceptable Reboot",
+      "preview": "# The Last Acceptable Reboot\n\nWhen every prophecy printer names junior auditor [[Tess Quill]] as the temporary chosen one, she must inspect the failing [[Continuity Engine]] before [[The Executive Producer]] compresses reality into a cleaner, younger reboot.\n\nTess chooses whether to cooperate with the [[Ministry of Narrative Compliance]], the [[Freeplot Cooperative]], or [[Continuity Studios]]. With help from [[Captain Sol Ledger]], [[Professor Beige]], [[Sprig-Nine]], and [[Paladin Patch]], she gathers four genre credentials and reaches the final console beneath [[Finale Galleria]].\n\n## Themes\n\n- Shared canon versus personal agency.\n- Affectionate parody of genre infrastructure.\n- The difference between maintaining continuity and owning it.\n- Whether a satisfying ending must be definitive",
+      "tags": [
+        "branching",
+        "adventure",
+        "parody"
+      ],
+      "status": "in-progress",
+      "favorite": false,
+      "aliases": [
+        "The Reboot Audit"
+      ],
+      "childrenIds": [
+        "scene-prophecy-overflow",
+        "scene-route-selection",
+        "scene-orbital-coupon",
+        "scene-wand-exam",
+        "scene-creature-arbitration",
+        "scene-cape-crisis",
+        "scene-final-galleria",
+        "scene-continuity-choice"
+      ],
+      "properties": {
+        "lore-level": "canon",
+        "place": {
+          "location": "finale-galleria"
+        },
+        "narrative": {
+          "arc": "turning-point",
+          "participants": [
+            "duchess-spoiler",
+            "paladin-patch"
+          ]
+        }
+      },
+      "frontmatter": {
+        "type": "story",
+        "status": "in-progress",
+        "aliases": [
+          "The Reboot Audit"
+        ],
+        "childrenIds": [
+          "scene-prophecy-overflow",
+          "scene-route-selection",
+          "scene-orbital-coupon",
+          "scene-wand-exam",
+          "scene-creature-arbitration",
+          "scene-cape-crisis",
+          "scene-final-galleria",
+          "scene-continuity-choice"
+        ],
+        "lore-level": "canon",
+        "place": {
+          "location": "finale-galleria"
+        },
+        "narrative": {
+          "arc": "turning-point",
+          "participants": [
+            "duchess-spoiler",
+            "paladin-patch"
+          ]
+        },
+        "id": "last-acceptable-reboot",
+        "name": "The Last Acceptable Reboot",
+        "tags": [
+          "branching",
+          "adventure",
+          "parody"
+        ]
+      },
+      "folderDescription": false,
+      "source": "worldnotion",
+      "canonSourcePath": "Stories/The-Last-Acceptable-Reboot.md",
+      "canonSourceModifiedMs": 1784392737721
+    },
+    {
+      "id": "unidentified:characters",
+      "kind": "unidentified-note",
+      "label": "Characters",
+      "preview": "# Characters\n\nHeroes, rivals, mentors, villains, and suspiciously articulate companions who can appear in WorldNotion canon or PathBranching events.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Characters.md",
+      "canonSourceModifiedMs": 1783742823841
+    },
+    {
+      "id": "unidentified:concepts",
+      "kind": "unidentified-note",
+      "label": "Concepts",
+      "preview": "# Concepts\n\nMetaphysical laws and genre mechanics that explain why the universe behaves like a badly coordinated crossover event.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Concepts.md",
+      "canonSourceModifiedMs": 1783742823847
+    },
+    {
+      "id": "unidentified:creatures",
+      "kind": "unidentified-note",
+      "label": "Creatures",
+      "preview": "# Creatures\n\nCollectible, legendary, and bureaucratically protected beings with their own union representation.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Creatures.md",
+      "canonSourceModifiedMs": 1783742823854
+    },
+    {
+      "id": "unidentified:events",
+      "kind": "unidentified-note",
+      "label": "Events",
+      "preview": "# Events\n\nHistorical turning points that created the current continuity crisis.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Events.md",
+      "canonSourceModifiedMs": 1783742823857
+    },
+    {
+      "id": "unidentified:items",
+      "kind": "unidentified-note",
+      "label": "Items",
+      "preview": "# Items\n\nArtifacts, permits, badges, stamps, and other objects whose power increases with narrative convenience.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Items.md",
+      "canonSourceModifiedMs": 1783742823859
+    },
+    {
+      "id": "unidentified:license",
+      "kind": "unidentified-note",
+      "label": "LICENSE",
+      "preview": "# License\n\nThe synthetic worldbuilding, narrative, configuration, and documentation in this repository are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).\n\nYou may share and adapt this material for any purpose, including commercial use, provided that you credit Everend Forge and indicate whether changes were made.\n\nLicense text: https://creativecommons.org/licenses/by/4.0/",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note has no WorldNotion frontmatter/id.",
+      "source": "worldnotion",
+      "canonSourcePath": "LICENSE.md",
+      "canonSourceModifiedMs": 1783742823862
+    },
+    {
+      "id": "unidentified:locations",
+      "kind": "unidentified-note",
+      "label": "Locations",
+      "preview": "# Locations\n\nPlaces where incompatible genres overlap, usually near a queue, a dramatic skyline, or a gift shop.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Locations.md",
+      "canonSourceModifiedMs": 1783742823862
+    },
+    {
+      "id": "unidentified:organizations",
+      "kind": "unidentified-note",
+      "label": "Organizations",
+      "preview": "# Organizations\n\nInstitutions competing to regulate, liberate, teach, unionize, or monetize the Grand Continuity.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Organizations.md",
+      "canonSourceModifiedMs": 1783742823866
+    },
+    {
+      "id": "unidentified:readme",
+      "kind": "unidentified-note",
+      "label": "README",
+      "preview": "# aux-demworld — The Grand Continuity\n\nAn original, synthetic demonstration universe for Everend Forge. It shows how the same vault can be explored in WorldNotion, authored as a branching narrative in PathBranching, and published as a read-only site with Compendium.\n\nThe setting parodies broad genre conventions—space dynasties, wizard schools, collectible creatures, municipal superheroes, chosen-one prophecies, and corporate reboots—without using characters, names, settings, or lore from existing franchises.\n\n## What is included\n\n- A connected canon of characters, locations, organizations, items, creatures, concepts, and historical events.\n- A custom Everend taxonomy and reusable entity templates.\n- A modular PathBranching v0.2 story named **The Last Acceptable Reboot**.\n- Four major route",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note has no WorldNotion frontmatter/id.",
+      "source": "worldnotion",
+      "canonSourcePath": "README.md",
+      "canonSourceModifiedMs": 1784167943604
+    },
+    {
+      "id": "unidentified:stories",
+      "kind": "unidentified-note",
+      "label": "Stories",
+      "preview": "# Stories\n\nWorldNotion story and scene planning entities. Runtime branching data lives in `.everend/.pathbranching/`.",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "Stories.md",
+      "canonSourceModifiedMs": 1783742823869
+    },
+    {
+      "id": "unidentified:aux-demworld",
+      "kind": "unidentified-note",
+      "label": "aux demworld",
+      "preview": "# The Grand Continuity\n\nThe Grand Continuity is what happened when several perfectly serviceable genres were merged by a cost-saving initiative and nobody preserved the original backups. Star dynasties, spell academies, collectible creatures, caped municipal responders, post-apocalyptic homeowner associations, and prophecy offices now share one reality held together by the overworked [[Continuity Engine]].\n\nAt the center lies [[Meridian Junction]], where narrative gravity pulls every quest toward the same transit hub, food court, and suspiciously final shopping complex. The official history is maintained by the [[Ministry of Narrative Compliance]], challenged by the [[Freeplot Cooperative]], and monetized by [[Continuity Studios]].\n\nThe tone is adventurous, affectionate, and absurd. The wo",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note is missing id, type, or name in frontmatter.",
+      "source": "worldnotion",
+      "canonSourcePath": "aux-demworld.md",
+      "canonSourceModifiedMs": 1783742823877
+    },
+    {
+      "id": "unidentified:node:modules:prettier:readme",
+      "kind": "unidentified-note",
+      "label": "README",
+      "preview": "[![Prettier Banner](https://unpkg.com/prettier-logo@1.0.3/images/prettier-banner-light.svg)](https://prettier.io)\n\n<h2 align=\"center\">Opinionated Code Formatter</h2>\n\n<p align=\"center\">\n  <em>\n    JavaScript\n    · TypeScript\n    · Flow\n    · JSX\n    · JSON\n  </em>\n  <br />\n  <em>\n    CSS\n    · SCSS\n    · Less\n  </em>\n  <br />\n  <em>\n    HTML\n    · Vue\n    · Angular\n  </em>\n  <br />\n  <em>\n    GraphQL\n    · Markdown\n    · YAML\n  </em>\n  <br />\n  <em>\n    <a href=\"https://prettier.io/docs/plugins\">\n      Your favorite language?\n    </a>\n  </em>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/prettier/prettier/actions?query=branch%3Amain\">\n    <img alt=\"CI Status\" src=\"https://img.shields.io/github/check-runs/prettier/prettier/main?style=flat-square&label=CI\"></a>\n  <a href=\"https://co",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note has no WorldNotion frontmatter/id.",
+      "source": "worldnotion",
+      "canonSourcePath": "node_modules/prettier/README.md",
+      "canonSourceModifiedMs": 1783831806657
+    },
+    {
+      "id": "unidentified:node:modules:prettier:third-party-notices",
+      "kind": "unidentified-note",
+      "label": "THIRD PARTY NOTICES",
+      "preview": "# Licenses of bundled dependencies\n\nThe published Prettier artifact additionally contains code with the following licenses:\nMIT, ISC, BSD-3-Clause, Apache-2.0, BSD-2-Clause, and BlueOak-1.0.0.\n\n## @angular/compiler@v22.0.6\n\n> Angular - the compiler library\n\nLicense: MIT  \nRepository: <https://github.com/angular/angular.git>  \nAuthor: angular  \n\n> The MIT License\n>\n> Copyright (c) 2010-2026 Google LLC. https://angular.dev/license\n>\n> Permission is hereby granted, free of charge, to any person obtaining a copy\n> of this software and associated documentation files (the \"Software\"), to deal\n> in the Software without restriction, including without limitation the rights\n> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n> copies of the Software, and to permit persons to ",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note has no WorldNotion frontmatter/id.",
+      "source": "worldnotion",
+      "canonSourcePath": "node_modules/prettier/THIRD-PARTY-NOTICES.md",
+      "canonSourceModifiedMs": 1783831806662
+    },
+    {
+      "id": "unidentified:node:modules:yaml:readme",
+      "kind": "unidentified-note",
+      "label": "README",
+      "preview": "# YAML <a href=\"https://www.npmjs.com/package/yaml\"><img align=\"right\" src=\"https://badge.fury.io/js/yaml.svg\" title=\"npm package\" /></a>\n\n`yaml` is a definitive library for [YAML](https://yaml.org/), the human friendly data serialization standard.\nThis library:\n\n- Supports both YAML 1.1 and YAML 1.2 and all common data schemas,\n- Passes all of the [yaml-test-suite](https://github.com/yaml/yaml-test-suite) tests,\n- Can accept any string as input without throwing, parsing as much YAML out of it as it can, and\n- Supports parsing, modifying, and writing YAML comments and blank lines.\n\nThe library is released under the ISC open source license, and the code is [available on GitHub](https://github.com/eemeli/yaml/).\nIt has no external dependencies and runs on Node.js as well as modern browsers.\n",
+      "tags": [],
+      "favorite": false,
+      "folderDescription": false,
+      "missingIdentity": true,
+      "identityWarning": "This note has no WorldNotion frontmatter/id.",
+      "source": "worldnotion",
+      "canonSourcePath": "node_modules/yaml/README.md",
+      "canonSourceModifiedMs": 1783831806788
     }
   ],
+  "scripts": [],
+  "scriptDocuments": [
+    {
+      "id": "script:dialogue:event:prophecy-overflow:dialogue:tess-opening",
+      "name": "An administrative response",
+      "format": "forge-script",
+      "blocks": [
+        {
+          "id": "block:dialogue:tess-opening:speech",
+          "kind": "speech",
+          "content": "I would like to appeal this destiny on the grounds that I have a meeting at ten.",
+          "speakerRef": "tess-quill",
+          "textKey": "script.script:dialogue:event:prophecy-overflow:dialogue:tess-opening.block:dialogue:tess-opening:speech",
+          "characterRef": "tess-quill"
+        }
+      ]
+    },
+    {
+      "id": "script:dialogue:event:audit-chamber:dialogue:null-engine",
+      "name": "The original purpose",
+      "format": "forge-script",
+      "blocks": [
+        {
+          "id": "block:dialogue:null-engine:speech",
+          "kind": "speech",
+          "content": "A healthy continuity is a conversation, dear. A dead one is a filing cabinet with excellent branding.",
+          "speakerRef": "nana-null",
+          "textKey": "script.script:dialogue:event:audit-chamber:dialogue:null-engine.block:dialogue:null-engine:speech",
+          "characterRef": "nana-null"
+        }
+      ]
+    },
+    {
+      "id": "script:dialogue:event:wand-exam:dialogue:beige-exam",
+      "name": "The actual lesson",
+      "format": "forge-script",
+      "blocks": [
+        {
+          "id": "block:dialogue:beige-exam:speech",
+          "kind": "speech",
+          "content": "Magic is the easy part. The difficult part is deciding who must live with it afterward.",
+          "speakerRef": "professor-beige",
+          "textKey": "script.script:dialogue:event:wand-exam:dialogue:beige-exam.block:dialogue:beige-exam:speech",
+          "characterRef": "professor-beige"
+        }
+      ]
+    },
+    {
+      "id": "script:dialogue:event:galleria-entry:dialogue:duchess-improvise",
+      "name": "A spoiler's invitation",
+      "format": "forge-script",
+      "blocks": [
+        {
+          "id": "block:dialogue:duchess-improvise:speech",
+          "kind": "speech",
+          "content": "They filmed six endings. Let us make the seventh thing they fear: an unscheduled decision.",
+          "speakerRef": "duchess-spoiler",
+          "textKey": "script.script:dialogue:event:galleria-entry:dialogue:duchess-improvise.block:dialogue:duchess-improvise:speech",
+          "characterRef": "duchess-spoiler"
+        }
+      ]
+    },
+    {
+      "id": "script:dialogue:event:producer-monologue:dialogue:producer-offer",
+      "name": "Vice President of Destiny",
+      "format": "forge-script",
+      "blocks": [
+        {
+          "id": "block:dialogue:producer-offer:speech",
+          "kind": "speech",
+          "content": "You can save every part of the world that tests well. I can even put your name above the title.",
+          "speakerRef": "executive-producer",
+          "textKey": "script.script:dialogue:event:producer-monologue:dialogue:producer-offer.block:dialogue:producer-offer:speech",
+          "characterRef": "executive-producer"
+        }
+      ]
+    }
+  ],
+  "externalFunctions": [],
   "variables": {
     "route": "unassigned",
     "keyCount": 0,

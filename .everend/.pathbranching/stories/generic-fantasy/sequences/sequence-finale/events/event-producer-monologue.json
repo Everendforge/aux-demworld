@@ -1,6 +1,6 @@
 {
   "storageVersion": "0.2",
-  "storyId": "last-acceptable-reboot",
+  "storyId": "generic-fantasy",
   "sequenceId": "sequence:finale",
   "event": {
     "id": "event:producer-monologue",
@@ -27,7 +27,27 @@
           "format": "plain",
           "content": "You can save every part of the world that tests well. I can even put your name above the title."
         },
-        "canonRefs": ["executive-producer", "tess-quill"]
+        "canonRefs": [
+          "executive-producer",
+          "tess-quill"
+        ],
+        "entryBeatId": "beat:dialogue:producer-offer:1",
+        "beats": [
+          {
+            "id": "beat:dialogue:producer-offer:1",
+            "kind": "speech",
+            "blockRef": {
+              "scriptId": "script:dialogue:event:producer-monologue:dialogue:producer-offer",
+              "blockId": "block:dialogue:producer-offer:speech"
+            }
+          }
+        ],
+        "members": [
+          {
+            "kind": "beat",
+            "id": "beat:dialogue:producer-offer:1"
+          }
+        ]
       }
     ],
     "decisions": [
@@ -40,15 +60,27 @@
             "id": "outcome:reject-producer",
             "name": "Reject ownership of destiny",
             "consequences": [
-              { "type": "setVariable", "name": "ambition", "value": false }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ambition",
+                "value": false
+              }
+            ],
+            "visibleText": "Reject ownership of destiny",
+            "unavailableBehavior": "locked"
           },
           {
             "id": "outcome:consider-promotion",
             "name": "Ask about the dental plan",
             "consequences": [
-              { "type": "setVariable", "name": "ambition", "value": true }
-            ]
+              {
+                "type": "setVariable",
+                "name": "ambition",
+                "value": true
+              }
+            ],
+            "visibleText": "Ask about the dental plan",
+            "unavailableBehavior": "locked"
           }
         ]
       }
@@ -58,8 +90,20 @@
         "id": "transition:producer-to-console",
         "from": "event:producer-monologue",
         "to": "event:continuity-console",
-        "label": "Take control of the Engine"
+        "label": "Take control of the Engine",
+        "order": 0,
+        "mode": "conditional"
       }
-    ]
+    ],
+    "childEventIds": [],
+    "presentEntityRefs": [
+      "tess-quill",
+      "executive-producer",
+      "continuity-studios",
+      "reboot-cycle",
+      "canon-debt"
+    ],
+    "dialogueStarts": [],
+    "boundaryBindings": []
   }
 }
